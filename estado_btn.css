@@ -1,0 +1,31 @@
+#seta_voltar:hover{
+    cursor: pointer;
+    background-color: #404040;
+    position: relative;
+    bottom: 1px;
+    box-shadow: -2px 2px black;
+}
+
+#seta_voltar:active{
+    cursor: pointer;
+    background-color: #202020;
+    position: relative;
+    bottom: 3px;
+    box-shadow: -3px 4px black;
+}
+
+#seta_seguir:hover{
+    cursor: pointer;
+    background-color: #404040;
+    position: relative;
+    bottom: 1px;
+    box-shadow: -2px 2px black;
+}
+
+#seta_seguir:active{
+    cursor: pointer;
+    background-color: #202020;
+    position: relative;
+    bottom: 3px;
+    box-shadow: -3px 4px black;
+}
