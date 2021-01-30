@@ -46,6 +46,7 @@
             <div>
                 <span style="font-size: 1em;">Como fazer o seu</span>
                 <span style="font-size: 1.2em;"><strong>Teste 12 Arquétipos</strong></span>
+                <a id="init_teste" href="#ir">Iniciar teste</a>
             </div>
             <div>
                 <p>Este teste foi criado para que você se compreenda melhor através da identificação dos arquétipos que
@@ -67,44 +68,53 @@
         <div class="legenda_img">
             <img src="./imgs/legenda_opcoes.jpg" alt="Opções de escolhar das perguntas">
         </div>
-        <div class="perguntas grid">
-            <div id="seta_voltar">
-                <img style="width: 40px;" src="imgs/seta.svg" alt="">
-            </div>
+        <form name="dados" action="">
+            <div class="perguntas grid" id="ir">
+                <div id="seta_voltar">
+                    <img style="width: 40px;" src="imgs/seta.svg" alt="">
+                </div>
+                <div class="pergunta_opcoes">
+                    <span>Sou uma pessoa calma. Sou tranquilo(a)</span>
+                    <div>
+                        <!--TODO:inserir opções de pergunta-->
+                    </div>
+                </div>
+                <div class="pergunta_opcoes">
+                    <span>Sou uma pessoa calma. Sou tranquilo(a)</span>
+                    <div>
+                        <!--TODO:inserir opções de pergunta-->
+                    </div>
+                </div>
+                <div class="pergunta_opcoes">
+                    <span>Um pouquinho de caos não faz mal a ninguém</span>
+                    <div>
+                        <!--TODO:inserir opções de pergunta-->
+                    </div>
+                </div>
+                <div class="pergunta_opcoes">
+                    <span>Um pouquinho de caos não faz mal a ninguém</span>
+                    <div>
+                        <!--TODO:inserir opções de pergunta-->
+                    </div>
+                </div>
 
-
-            <div class="pergunta_opcoes">
-                <span>Sou uma pessoa calma. Sou tranquilo(a)</span>
-                <div>
-                    <!--TODO:inserir opções de pergunta-->
+                <div id="seta_seguir">
+                    <img style="width: 40px;" src="imgs/seta.svg" alt="">
                 </div>
             </div>
-            <div class="pergunta_opcoes">
-                <span>Um pouquinho de caos não faz mal a ninguém</span>
-                <div>
-                    <!--TODO:inserir opções de pergunta-->
-                </div>
-            </div>
-            <div class="pergunta_opcoes">
-                <span>Um pouquinho de caos não faz mal a ninguém</span>
-                <div>
-                    <!--TODO:inserir opções de pergunta-->
-                </div>
-            </div>
-
-            <div id="seta_seguir">
-                <img style="width: 40px;" src="imgs/seta.svg" alt="">
-            </div>
-        </div>
-
+        </form>
         <div class="dados">
             <div>
-                <span>Seus dados de contato:</span><br>
-                <label for="nome">Nome:</label>
-                <input id="nome" type="text">
+                <form name="dados" action="">
+                    <span>Seus dados de contato:</span><br>
+                    <label for="nome">Nome:</label>
+                    <input id="nome" type="text">
 
-                <label for="email">Email:</label>
-                <input id="email" type="email">
+                    <label for="email">Email:</label>
+                    <input id="email" type="email">
+
+                    <button id="submit" type="submit">Enviar teste!</button>
+                </form>
             </div>
         </div>
 

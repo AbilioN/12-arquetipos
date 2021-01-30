@@ -2,4 +2,182 @@
     body{
         font-size: 20px;
     }
-}
+    *{
+        font-family: 'Montserrat', sans-serif; 
+     }
+     
+     body,a,ul,li{
+         margin: 0;
+         padding: 0;
+         text-decoration: none;
+         color: azure;
+     }
+     
+     li{
+         list-style-type: none;
+     }
+     
+     p,a,li,span{
+       font-size: 1em;
+     }
+     
+     h1, h3{
+       font-size: 1.2em;
+     }
+     
+     h2{
+       font-size: 1.6em;
+     }
+     h4{
+       font-size: 1.1em;
+     }
+    .anunciado{
+        background-color: transparent;
+        background-image: url('./imgs/12-arquetipos_fundo.jpg');
+        background-repeat:no-repeat;
+        height: 452px;
+    }
+     
+     .grid{
+         display: grid;
+         grid-template-columns: repeat(14, 1fr);
+         box-sizing: border-box;
+     }
+     .container_geral{
+        display: flex;
+        flex-direction: column;
+     }
+     .anunciado > div:nth-child(1){
+        display: none;
+     }
+
+    .tutorial{
+        display: flex;
+        background-color: #5F394D;
+        border-bottom: 1px solid #707070;
+        padding: 10px;
+    }
+
+    .tutorial > div:nth-child(1){
+        width: 30%;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-right: 1px solid azure;
+        border-bottom: none;
+    }
+
+    .tutorial > div:nth-child(2){
+        width: 70%;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: center;
+        border-bottom: none;
+    }
+
+    .tutorial > div:nth-child(2) > p{
+        color: black;
+        padding: 10px;
+        background-color: white;
+        border: 1px solid #707070;
+        border-radius: 10px;
+    }
+     
+     .legenda_img{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+     }
+     .legenda_img > img{
+        width: 35%;
+     }
+     
+     .dados{
+        background-color: #9B9FAA;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+        padding: 10px; 
+     }
+     .dados > div{
+        width: 40%;
+     }
+
+    .dados > div > form{
+        display: flex;
+        flex-direction: column;
+    }
+     
+    .dados > div > form > input{
+        padding: 4px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        border: 1px solid #707070;
+        outline: none;
+    }
+    .dados > div > span{
+         text-align: center;
+    }
+
+    .perguntas{
+        padding: 0px 10px 0px 10px;
+        
+    }
+    #seta_voltar{
+        background-color: #606060;
+        height: 276px;
+        grid-column: 1/2;
+        margin: 5px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #seta_voltar > img{
+        transform: rotate(90deg);
+    }
+     
+    #seta_seguir{
+        background-color: #606060;
+        height: 276px;
+        grid-column: 14/15;
+        margin: 5px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #seta_seguir > img{
+        transform: rotate(-90deg);
+    }
+    .perguntas > .pergunta_opcoes{
+        border: 1px solid #707070;
+        border-radius: 8px;
+        padding: 2px 0px;
+        grid-column: span 3;
+        text-align: center;
+        height: 270px;
+        margin: 5px;
+        background-color: #56AC8A;
+    }
+     
+    .perguntas > .pergunta_opcoes {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+     .pergunta_opcoes > span{
+        height: 35%;
+     }
+     
+     .pergunta_opcoes > div{
+        height: 55%;
+        background-color: white;
+     }     
+ }

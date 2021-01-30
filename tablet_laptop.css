@@ -1,4 +1,4 @@
-@media screen and (min-width: 960px){
+@media screen and (min-width: 800px){
     body{
         font-size: 20px;
     }
@@ -96,23 +96,29 @@
         flex-direction: column;
         align-items: center;
         margin-top: 10px;
-        margin-bottom: 10px;
         padding: 10px; 
      }
+
      .dados > div{
         width: 50%;
         display: flex;
         flex-direction: column;
      }
+
+    .dados > div > form{
+        display: flex;
+        flex-direction: column;
+    }
      
-    .dados > div > input{
+    .dados > div > form > input{
         padding: 4px;
         margin-bottom: 10px;
         border-radius: 10px;
         border: 1px solid #707070;
         outline: none;
     }
-    .dados > div > span{
+
+    .dados > div > form >span{
          text-align: center;
     }
 
@@ -122,7 +128,7 @@
     }
     #seta_voltar{
         background-color: #606060;
-        height: 206px;
+        height: 276px;
         grid-column: 1/2;
         margin: 5px;
         border-radius: 10px;
@@ -136,7 +142,7 @@
      
     #seta_seguir{
         background-color: #606060;
-        height: 206px;
+        height: 276px;
         grid-column: 14/15;
         margin: 5px;
         border-radius: 10px;
@@ -153,7 +159,7 @@
         padding: 2px 0px;
         grid-column: span 4;
         text-align: center;
-        height: 200px;
+        height: 270px;
         margin: 5px;
         background-color: #56AC8A;
     }

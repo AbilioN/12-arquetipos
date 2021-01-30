@@ -72,26 +72,33 @@ h4{
 
 .legenda_img{
    width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 .legenda_img > img{
-   width: 100%;
+   width: 80%;
 }
 
 .dados{
    background-color: #9B9FAA;
    display: flex;
+   align-items: center;
    flex-direction: column;
    margin-top: 10px;
-   margin-bottom: 10px;
-   padding: 10px; 
+   padding: 10px
 }
 
 .dados > div{
+   width: 80%;
+}
+
+.dados > div > form{
    display: flex;
    flex-direction: column;
 }
 
-.dados > div > input{
+.dados > div > form > input{
    padding: 4px;
    margin-bottom: 10px;
    border-radius: 10px;
