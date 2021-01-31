@@ -1,4 +1,4 @@
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1000px){
     body{
         font-size: 20px;
     }
@@ -33,9 +33,13 @@
      }
     .anunciado{
         background-color: transparent;
-        background-image: url('./imgs/12-arquetipos_fundo.jpg');
         background-repeat:no-repeat;
-        height: 452px;
+    }
+
+    .anunciado > img{
+        display: block;
+        width: 100%;
+        grid-column: 1/15;
     }
      
      .grid{
@@ -47,7 +51,7 @@
         display: flex;
         flex-direction: column;
      }
-     .anunciado > div:nth-child(1){
+     .anunciado > div:nth-child(2){
         display: none;
      }
 
@@ -126,7 +130,10 @@
     }
 
     .perguntas{
-        padding: 0px 10px 0px 10px;
+        padding: 3px 10px 3px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         
     }
     #seta_voltar{

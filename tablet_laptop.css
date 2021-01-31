@@ -31,40 +31,34 @@
      h4{
        font-size: 1.1em;
      }
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(14, 1fr);
+        box-sizing: border-box;
+    }
     .anunciado{
+        display: none;
         background-color: transparent;
-        background-image: url('./imgs/12-arquetipos_fundo.jpg');
+        background-image:none;
         background-repeat:no-repeat;
-        height: 452px;
+        padding: 0;
+    }
+
+    .anunciado > img{
+        display: none;
     }
      
-     .grid{
-         display: grid;
-         grid-template-columns: repeat(14, 1fr);
-         box-sizing: border-box;
-     }
      .container_geral{
         display: flex;
         flex-direction: column;
      }
-     .anunciado > div:nth-child(1){
+     .anunciado > div:nth-child(2){
         display: none;
      }
      
-     .anunciado > div:nth-child(1) > span{
-        display: none;
-        padding: 0px 0px 0px 10px;
-     }
      
-    .anunciado > div:nth-child(2){
+    .anunciado > div:nth-child(3){
         display: none;
-        grid-row: 2;
-        grid-column: 1/13;
-    }
-     
-    .anunciado > div:nth-child(2) > p{
-        padding: 10px;
-        margin: 0;
     }
 
     .tutorial{
@@ -91,12 +85,14 @@
      }
      
      .dados{
+        
         background-color: #9B9FAA;
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: 10px;
-        padding: 10px; 
+        padding: 10px;
+        margin-top: 50px;
      }
 
      .dados > div{
