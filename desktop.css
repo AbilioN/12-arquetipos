@@ -42,18 +42,20 @@
         grid-column: 1/15;
     }
      
-     .grid{
+    .grid{
          display: grid;
          grid-template-columns: repeat(14, 1fr);
          box-sizing: border-box;
-     }
-     .container_geral{
+    }
+
+    .container_geral{
         display: flex;
         flex-direction: column;
-     }
-     .anunciado > div:nth-child(2){
+    }
+
+    .anunciado > div:nth-child(2){
         display: none;
-     }
+    }
 
     .tutorial{
         display: flex;
@@ -91,27 +93,28 @@
         border-radius: 10px;
     }
      
-     .legenda_img{
+    .legenda_img{
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
-     }
-     .legenda_img > img{
+    }
+
+    .legenda_img > img{
         width: 35%;
-     }
+    }
      
-     .dados{
+    .dados{
         background-color: #9B9FAA;
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: 10px;
         padding: 10px; 
-     }
-     .dados > div{
+    }
+    .dados > div{
         width: 40%;
-     }
+    }
 
     .dados > div > form{
         display: flex;
@@ -125,17 +128,15 @@
         border: 1px solid #707070;
         outline: none;
     }
+
     .dados > div > span{
          text-align: center;
     }
 
     .perguntas{
         padding: 3px 10px 3px 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
     }
+
     #seta_voltar{
         background-color: #606060;
         height: 276px;
@@ -160,31 +161,41 @@
         align-items: center;
         justify-content: center;
     }
+
     #seta_seguir > img{
         transform: rotate(-90deg);
     }
-    .perguntas > .pergunta_opcoes{
+
+    #container_cards{
+        display: grid;
+        grid-column: 2/14;
+        grid-template-columns: repeat(15, 1fr);
+        box-sizing: border-box;
+    }
+
+    #container_cards > .pergunta_opcoes{
         border: 1px solid #707070;
         border-radius: 8px;
         padding: 2px 0px;
         grid-column: span 3;
         text-align: center;
         height: 270px;
-        margin: 5px;
+        margin: 4px;
         background-color: #56AC8A;
     }
      
-    .perguntas > .pergunta_opcoes {
+    .pergunta_opcoes {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
      .pergunta_opcoes > span{
+        padding: 10px;
         height: 35%;
      }
      
      .pergunta_opcoes > div{
-        height: 55%;
+        height: 50%;
         background-color: white;
      }     
  }

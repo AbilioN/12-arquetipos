@@ -138,29 +138,39 @@ h4{
    align-items: center;
    justify-content: center;
 }
-.perguntas > .pergunta_opcoes{
+
+#container_cards{
+   display: grid;
+   grid-column: 1/14;
+   grid-template-columns: repeat(15, 1fr);
+   box-sizing: border-box;
+}
+
+#container_cards > .pergunta_opcoes{
    border: 1px solid #707070;
    border-radius: 8px;
    padding: 2px 0px;
-   grid-column: span 13;
+   grid-column: span 16;
    text-align: center;
-   height: 200px;
-   margin: 5px;
+   height: 270px;
+   margin: 4px;
    background-color: #56AC8A;
 }
 
-.perguntas > .pergunta_opcoes {
+.pergunta_opcoes {
    display: flex;
    flex-direction: column;
    justify-content: center;
 }
 .pergunta_opcoes > span{
+   padding: 10px;
    height: 35%;
 }
 
 .pergunta_opcoes > div{
-   height: 55%;
+   height: 50%;
    background-color: white;
-}
+}     
+
 
 

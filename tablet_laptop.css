@@ -149,28 +149,37 @@
     #seta_seguir > img{
         transform: rotate(-90deg);
     }
-    .perguntas > .pergunta_opcoes{
+
+    #container_cards{
+        display: grid;
+        grid-column: 2/14;
+        grid-template-columns: repeat(15, 1fr);
+        box-sizing: border-box;
+    }
+
+    #container_cards > .pergunta_opcoes{
         border: 1px solid #707070;
         border-radius: 8px;
         padding: 2px 0px;
-        grid-column: span 4;
+        grid-column: span 5;
         text-align: center;
         height: 270px;
-        margin: 5px;
+        margin: 4px;
         background-color: #56AC8A;
     }
      
-    .perguntas > .pergunta_opcoes {
+    .pergunta_opcoes {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
      .pergunta_opcoes > span{
+        padding: 10px;
         height: 35%;
      }
      
      .pergunta_opcoes > div{
-        height: 55%;
+        height: 50%;
         background-color: white;
      }     
- }
+}
