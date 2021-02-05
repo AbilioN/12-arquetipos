@@ -292,28 +292,40 @@ let json = [
 $(document).ready(function () {
     console.log(Object.keys(json).length)
     let container_all_questions = document.getElementById("container_cards")
+    console.log(container_all_questions.children)
 
-    function criarPergunta() {
+    function criarPergunta(id) {
         let pergunta_container = document.createElement("div")
         pergunta_container.className = 'pergunta_opcoes'
         pergunta_container.appendChild(document.createElement("span"))
+        pergunta_container.children[0].innerText = id
         pergunta_container.appendChild(document.createElement("div"))
         container_all_questions.appendChild(pergunta_container)
+
+        for (let i = 0; i <= 5; i++) {
+            let select = document.createElement("label")
+            select.className = 'custom-radio-btn'
+            select.appendChild(document.createElement("input"))
+            select.children[0].setAttribute("name", "opcoes")
+            select.children[0].setAttribute("type", "radio")
+            select.appendChild(document.createElement("span"))
+            select.children[1].className = 'checkmark'
+            pergunta_container.children[1].appendChild(select)
+        }
+
+    }
+
+    function seguir_voltar() {
+        console.log("Chamando função")
+        for (let i = 2; i < container_all_questions.length; i++) {
+            container_all_questions.children[i].remove
+        }
     }
 
 
     for (let i = 0; i < 5; i++) {
-        criarPergunta()
+        criarPergunta(i)
     }
 
-
-
-    let lista_perguntas = []
-    /*
-    for (let i = 0; i < 3; i++) {
-        lista_perguntas[i] = container_select[i].appendChild(document.createElement("div"))
-
-    }
-    */
 
 })
