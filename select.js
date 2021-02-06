@@ -299,7 +299,11 @@ $(document).ready(function () {
         pergunta_container.className = 'pergunta_opcoes'
         pergunta_container.appendChild(document.createElement("span"))
         pergunta_container.children[0].innerText = id
-        pergunta_container.appendChild(document.createElement("div"))
+
+        let div = document.createElement("div")
+        div.className = 'form-group'
+    
+        pergunta_container.appendChild(div)
         container_all_questions.appendChild(pergunta_container)
 
         for (let i = 0; i <= 5; i++) {
@@ -308,8 +312,17 @@ $(document).ready(function () {
             select.appendChild(document.createElement("input"))
             select.children[0].setAttribute("name", "opcoes")
             select.children[0].setAttribute("type", "radio")
+            select.children[0].setAttribute("value", i)
+        
+            let selectorString = id+'-'+i
+            select.children[0].setAttribute("name", id)
+
+            select.children[0].setAttribute("id", selectorString)
+
             select.appendChild(document.createElement("span"))
             select.children[1].className = 'checkmark'
+            select.children[1].setAttribute('for' , selectorString)
+            
             pergunta_container.children[1].appendChild(select)
         }
 
@@ -323,7 +336,7 @@ $(document).ready(function () {
     }
 
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 3; i++) {
         criarPergunta(i)
     }
 
