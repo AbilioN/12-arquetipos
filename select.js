@@ -290,17 +290,21 @@ let json = [
 ];
 
 $(document).ready(function () {
-    console.log(Object.keys(json).length)
+    //console.log(Object.keys(json).length)
     let container_all_questions = document.getElementById("container_cards")
-    console.log(container_all_questions.children)
+    //console.log(container_all_questions.children)
 
-    function criarPergunta(id) {
+    function criarPergunta(question) {
         let pergunta_container = document.createElement("div")
         pergunta_container.className = 'pergunta_opcoes'
-        pergunta_container.appendChild(document.createElement("span"))
-        pergunta_container.children[0].innerText = id
+        pergunta_container.setAttribute('step' , question.ID)
+        pergunta_container.setAttribute('id' , 'card')
 
-        let div = document.createElement("div")
+        pergunta_container.appendChild(document.createElement("span"))
+        pergunta_container.children[0].innerText = question.QUESTION
+
+
+        let div = document.createElement("div");
         div.className = 'form-group'
     
         pergunta_container.appendChild(div)
@@ -314,8 +318,8 @@ $(document).ready(function () {
             select.children[0].setAttribute("type", "radio")
             select.children[0].setAttribute("value", i)
         
-            let selectorString = id+'-'+i
-            select.children[0].setAttribute("name", id)
+            let selectorString = question.ID+'-'+i
+            select.children[0].setAttribute("name",  question.ID)
 
             select.children[0].setAttribute("id", selectorString)
 
@@ -336,9 +340,39 @@ $(document).ready(function () {
     }
 
 
-    for (let i = 0; i < 3; i++) {
-        criarPergunta(i)
+
+    let size = 3
+    let step = 0
+    function addCards(step, size)
+    {
+
+        for (let i = 0; i < size ; i++)
+        {
+            criarPergunta(json[step]);
+            step++;
+        }
+        let lastStep = step;
+        return lastStep;
     }
 
+    addCards(step,size);
+
+    function loadCards()
+    {
+        let cards = document.querySelectorAll('#card') 
+        let lastCard = $('#card:last-child')
+        let lastStep = lastCard.attr('step')
+
+        cards.forEach((item)=>{
+            console.log(item)
+            item.classList.add('invisible')
+        })
+
+        addCards(lastStep, size)
+
+    }
+        $('#seta_seguir').click(()=>{
+            loadCards()
+        })
 
 })
