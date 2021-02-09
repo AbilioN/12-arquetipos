@@ -169,7 +169,7 @@
     #container_cards{
         display: grid;
         grid-column: 2/14;
-        grid-template-columns: repeat(15, 1fr);
+        grid-template-columns: repeat(16, 1fr);
         box-sizing: border-box;
     }
 
@@ -177,7 +177,7 @@
         border: 1px solid #707070;
         border-radius: 8px;
         padding: 2px 0px;
-        grid-column: span 3;
+        grid-column: span 4;
         text-align: center;
         height: 270px;
         margin: 4px;
@@ -191,11 +191,12 @@
     }
      .pergunta_opcoes > span{
         padding: 10px;
-        height: 35%;
+        padding-top: 0;
+        height: 40%;
      }
      
      .pergunta_opcoes > div{
-        height: 50%;
+        height: 45%;
         background-color: white;
         display: flex;
         justify-content: center;

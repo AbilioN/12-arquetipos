@@ -173,13 +173,17 @@
         flex-direction: column;
         justify-content: center;
     }
-     .pergunta_opcoes > span{
+    .pergunta_opcoes > span{
         padding: 10px;
-        height: 35%;
+        padding-top: 0;
+        height: 40%;
      }
      
-     .pergunta_opcoes > div{
-        height: 50%;
+    .pergunta_opcoes > div{
+        height: 45%;
         background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
      }     
 }

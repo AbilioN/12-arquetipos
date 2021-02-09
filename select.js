@@ -297,8 +297,8 @@ $(document).ready(function () {
     function criarPergunta(question) {
         let pergunta_container = document.createElement("div")
         pergunta_container.className = 'pergunta_opcoes'
-        pergunta_container.setAttribute('step' , question.ID)
-        pergunta_container.setAttribute('id' , 'card')
+        pergunta_container.setAttribute('step', question.ID)
+        pergunta_container.setAttribute('id', 'card')
 
         pergunta_container.appendChild(document.createElement("span"))
         pergunta_container.children[0].innerText = question.QUESTION
@@ -306,7 +306,7 @@ $(document).ready(function () {
 
         let div = document.createElement("div");
         div.className = 'form-group'
-    
+
         pergunta_container.appendChild(div)
         container_all_questions.appendChild(pergunta_container)
 
@@ -317,16 +317,16 @@ $(document).ready(function () {
             select.children[0].setAttribute("name", "opcoes")
             select.children[0].setAttribute("type", "radio")
             select.children[0].setAttribute("value", i)
-        
-            let selectorString = question.ID+'-'+i
-            select.children[0].setAttribute("name",  question.ID)
+
+            let selectorString = question.ID + '-' + i
+            select.children[0].setAttribute("name", question.ID)
 
             select.children[0].setAttribute("id", selectorString)
 
             select.appendChild(document.createElement("span"))
             select.children[1].className = 'checkmark'
-            select.children[1].setAttribute('for' , selectorString)
-            
+            select.children[1].setAttribute('for', selectorString)
+
             pergunta_container.children[1].appendChild(select)
         }
 
@@ -341,13 +341,11 @@ $(document).ready(function () {
 
 
 
-    let size = 3
+    let size = 4
     let step = 0
-    function addCards(step, size)
-    {
+    function addCards(step, size) {
 
-        for (let i = 0; i < size ; i++)
-        {
+        for (let i = 0; i < size; i++) {
             criarPergunta(json[step]);
             step++;
         }
@@ -355,15 +353,14 @@ $(document).ready(function () {
         return lastStep;
     }
 
-    addCards(step,size);
+    addCards(step, size);
 
-    function loadCards()
-    {
-        let cards = document.querySelectorAll('#card') 
+    function loadCards() {
+        let cards = document.querySelectorAll('#card')
         let lastCard = $('#card:last-child')
         let lastStep = lastCard.attr('step')
 
-        cards.forEach((item)=>{
+        cards.forEach((item) => {
             console.log(item)
             item.classList.add('invisible')
         })
@@ -371,8 +368,8 @@ $(document).ready(function () {
         addCards(lastStep, size)
 
     }
-        $('#seta_seguir').click(()=>{
-            loadCards()
-        })
+    $('#seta_seguir').click(() => {
+        loadCards()
+    })
 
 })

@@ -7,7 +7,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 10px;
 }
 
 .custom-radio-btn:nth-child(2) {
@@ -20,6 +19,7 @@
     justify-content: center;
     align-items: center;
     margin-left: 10px;
+    margin-bottom: 20px;
 }
 
 .custom-radio-btn:nth-child(3) {
@@ -32,6 +32,8 @@
     justify-content: center;
     align-items: center;
     margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 30px;
 }
 
 .custom-radio-btn:nth-child(4) {
@@ -43,7 +45,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
 }
 
 .custom-radio-btn:nth-child(5) {
@@ -55,7 +58,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 10px;
+
 }
 
 .custom-radio-btn input {
