@@ -340,9 +340,37 @@ $(document).ready(function () {
     }
 
 
-
+    let windowWidth = window.innerWidth;
     let size = 4
+
+    if(windowWidth < 1000){
+        size = 2;
+    }
+    if(windowWidth < 800){
+        size = 1;
+    }
     let step = 0
+
+
+    $( window ).resize(function() {
+
+        let windowWidth = window.innerWidth;
+        let size = 4
+    
+        if(windowWidth > 996  && windowWidth < 1002){
+            size = 2;
+            location.reload();
+
+        }
+        if(windowWidth < 800 && windowWidth > 795){
+            size = 1;
+            location.reload();
+
+        }
+        // let step = 0
+
+    });
+
     function addCards(step, size) {
 
         for (let i = 0; i < size; i++) {
