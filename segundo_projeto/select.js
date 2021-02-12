@@ -311,12 +311,6 @@ $(document).ready(function () {
         container_all_questions.appendChild(pergunta_container)
 
         for (let i = 0; i <= 5; i++) {
-
-            let concordo = document.createElement("span")
-            concordo.innerText = "Concordo"
-            console.log(concordo)
-            pergunta_container.children[1].appendChild(concordo)
-
             let select = document.createElement("label")
             select.className = 'custom-radio-btn'
             select.appendChild(document.createElement("input"))
@@ -334,12 +328,6 @@ $(document).ready(function () {
             select.children[1].setAttribute('for', selectorString)
 
             pergunta_container.children[1].appendChild(select)
-
-            let discordo = document.createElement("span")
-            discordo.innerText = "Discordo"
-            console.log(discordo)
-            pergunta_container.children[1].appendChild(discordo)
-
         }
 
     }
@@ -351,8 +339,38 @@ $(document).ready(function () {
         }
     }
 
+
+    let windowWidth = window.innerWidth;
     let size = 4
+
+    if (windowWidth < 1000) {
+        size = 2;
+    }
+    if (windowWidth < 800) {
+        size = 3;
+    }
     let step = 0
+
+
+    $(window).resize(function () {
+
+        let windowWidth = window.innerWidth;
+        let size = 4
+
+        if (windowWidth > 996 && windowWidth < 1002) {
+            size = 2;
+            location.reload();
+
+        }
+        if (windowWidth < 800 && windowWidth > 795) {
+            size = 1;
+            location.reload();
+
+        }
+        // let step = 0
+
+    });
+
     function addCards(step, size) {
 
         for (let i = 0; i < size; i++) {
@@ -378,7 +396,6 @@ $(document).ready(function () {
         addCards(lastStep, size)
 
     }
-
     $('#seta_seguir').click(() => {
         loadCards()
     })

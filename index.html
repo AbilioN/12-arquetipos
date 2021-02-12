@@ -47,32 +47,11 @@
                 <p>O teste iniciará em NEUTRO por padrão.</p>
             </div>
         </div>
+
         <div class="tutorial">
-            <div>
-                <span style="font-size: 1em;">Como fazer o seu</span>
-                <span style="font-size: 1.2em;"><strong>Teste 12 Arquétipos</strong></span>
-                <a id="init_teste" href="#container_cards">Iniciar teste</a>
-            </div>
-            <div>
-                <p>Este teste foi criado para que você se compreenda melhor através da identificação dos arquétipos que
-                    permeiam sua vida.</p>
-                <p>Os arquétipos são espécies de moldes ou padrões de comportamento, que definem formas específicas de
-                    ser.
-                    São
-                    também símbolos e imagens culturais que estão registrados no inconsciente coletivo.
-                </p>
-                <p>Todos os doze arquétipos são importantes e cada um trás consigo grandes dádivas e lições.
-                    Nenhum é melhor nem pior do que o outro. Cada um tem suas características próprias, assim, não
-                    existem
-                    respostas certas ou erradas.</p>
-                <p>De acordo com cada afirmação você marcará a alternativa que melhor lhe define, respeitando o grau de
-                    intensidade com o qual concorda ou discorda da afirmação.</p>
-                <p>O teste iniciará em NEUTRO por padrão.</p>
-            </div>
+
         </div>
-        <div class="legenda_img">
-            <img src="./imgs/legenda_opcoes.jpg" alt="Opções de escolhar das perguntas">
-        </div>
+
         <form name="dados" action="">
             <div class="perguntas grid">
                 <div id="seta_voltar">
@@ -108,69 +87,6 @@
 
     </div>
 
-
-    <!--
-    <script>
-
-
-            function readCard(step, direction) {
-                let current_json = []
-                let step_size = 4
-                let step_count = 1
-
-                for (i = 1; i <= step_size; i++) {
-                    if (step_count > step_size) {
-                        break
-                    }
-                    let question = json[step]
-                    current_json.push(question)
-                    step_count++
-                    step++
-                }
-
-                function questionTemplate(question) {
-
-                    return `
-                    <div class="pergunta">
-                        <div class="conteudo">
-                            <span>
-                                ${question.QUESTION}
-                            </span>
-                        </div>
-                        <div class="resposta">
-                            
-                        </div>
-                    </div>   `
-                }
-
-                document.getElementById("container_pergunta").innerHTML = `
-                ${current_json.map(questionTemplate).join('')} `
-
-
-            }
-            function initCards() {
-                let corossel_container = document.getElementById("carrossel_container")
-
-                let div = document.createElement('div')
-                div.id = 'seta'
-
-                let img = document.createElement('img')
-                img.src = 'imgs/seta.svg'
-
-                div.appendChild(img)
-                corossel_container.appendChild(div)
-
-                let classe_div = document.getElementById("seta")
-                classe_div.onclick = readCard(1, 1)
-                classe_div.id = seta
-            }
-
-            initCards()
-        });
-
-    </script>
-
--->
 </body>
 
 </html>

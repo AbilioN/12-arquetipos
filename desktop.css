@@ -62,9 +62,11 @@
         background-color: #5F394D;
         border-bottom: 1px solid #707070;
         padding: 10px;
+        display: none;
     }
 
     .tutorial > div:nth-child(1){
+        color: azure;
         width: 30%;
         margin: 10px;
         display: flex;
