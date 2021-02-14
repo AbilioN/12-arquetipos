@@ -1,6 +1,17 @@
 <?php
     require_once('lib/JSONDB.php');
+    require_once('lib/PHPMailer.php');
+    require_once('lib/Exception.php');
+    require_once('lib/SMTP.php');
+
+
     use Jajo\JSONDB;
+    // use PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+    use PHPMailer\PHPMailer\SMTP;
+
+
 
     function processar_teste($entry){
         $resultados = array();
@@ -36,13 +47,59 @@
 
         var_dump($resultados);
 
-        
         $firstkey = array_keys($resultados)[0];
         $lastkey = array_keys($resultados)[count($resultados) - 1];
 
         return array(urlencode($firstkey), urlencode($lastkey));
     }
 
+    function initMailer()
+    {
+        try
+        {
+            // Configurações do servidor
+            $mail = new PHPMailer();
+            $mail->isSMTP();        //Devine o uso de SMTP no envio
+            $mail->SMTPAuth = true; //Habilita a autenticação SMTP
+            $mail->Username   = 'mixx.viagens@gmail.com';
+            $mail->Password   = 'mix$123$456$789';
+            $mail->SMTPDebug = 2;
+            // Criptografia do envio SSL também é aceito
+            $mail->SMTPSecure = 'tls';
+            // Informações específicadas pelo Google
+            $mail->Host = 'smtp.gmail.com';
+            $mail->Port = 587;
+            // Define o remetente
+            $mail->setFrom('netobalby@gmail.com', 'Mix Viagens');
+            // Define o destinatário
+            $mail->addAddress('netobalby@gmail.com', 'Neto Balby');
+            // Conteúdo da mensagem
+            $mail->isHTML(true);  // Seta o formato do e-mail para aceitar conteúdo HTML
+            $mail->Subject = 'Teste';
+            $mail->Body    = 'Este é o corpo da mensagem <b>Olá em negrito!</b>';
+            $mail->AltBody = 'Este é o cortpo da mensagem para clientes de e-mail que não reconhecem HTML';
+            // Enviar
+            if($mail->send()){
+                echo 'A mensagem foi enviada!';
+                
+            }else{
+                echo 'A mensagem nao foi enviada!';
+
+            }
+        }
+        catch (Exception $e)
+        {
+            echo "Message could not be sent. Mailer Error: {$e->getMessage()}";
+        }
+
+
+        
+    }
+
+    function enviarEmail($email, $nome, $mailer)
+    {
+
+    }
     $pagina_resultados = file_get_contents('./resultado.shtml');
 
     $arquetipos = processar_teste($_POST);
@@ -62,5 +119,8 @@
             'distante' => $arquetipos[1]
         ]
     );
+
+    initMailer();
+
 
     echo($pagina_resultados);
