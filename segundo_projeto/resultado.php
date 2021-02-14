@@ -53,7 +53,7 @@
         return array(urlencode($firstkey), urlencode($lastkey));
     }
 
-    function initMailer()
+    function initMailer($email, $nome)
     {
         try
         {
@@ -72,11 +72,11 @@
             // Define o remetente
             $mail->setFrom('netobalby@gmail.com', 'Mix Viagens');
             // Define o destinatário
-            $mail->addAddress('netobalby@gmail.com', 'Neto Balby');
+            $mail->addAddress("{$email}", "{$nome}");
             // Conteúdo da mensagem
             $mail->isHTML(true);  // Seta o formato do e-mail para aceitar conteúdo HTML
             $mail->Subject = 'Teste';
-            $mail->Body    = 'Este é o corpo da mensagem <b>Olá em negrito!</b>';
+            $mail->Body    = '<b>12 Arquetipos</b>';
             $mail->AltBody = 'Este é o cortpo da mensagem para clientes de e-mail que não reconhecem HTML';
             // Enviar
             if($mail->send()){
@@ -105,7 +105,7 @@
     $arquetipos = processar_teste($_POST);
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     $nome = filter_var($_POST['nome'], FILTER_SANITIZE_STRING);
-
+    initMailer($email, $nome);
     $pagina_resultados = str_replace('%PROXIMO%', $arquetipos[0], $pagina_resultados);
     $pagina_resultados = str_replace('%DISTANTE%', $arquetipos[1], $pagina_resultados);
 
