@@ -1,0 +1,92 @@
+<section id="geral" style="width: 50%;margin: 0 auto;background: #ffffff;color: #333;">
+    <header id="bannerGeral">
+        <h1><img src="assets/imgs/12-arquetipos-e-herois.jpg"></h1>
+    </header>
+    <article id="content">
+        <b><h2>RESULTADO</h2></b><h2>TESTE 12 ARQUÉTIPOS</h2>
+        <hr width=50%>
+        <p>O objetivo deste teste é identificar o arquétipo mais ativo em sua vida e o menos ativo.</p>
+        <p>O seu arquétipo mais ativo é</p>
+        <center><img src="assets/imgs/o_%PROXIMO%_12_arquetipos.jpg"></center>
+        <p>Dentre as características demonstradas neste arquétipo observe as qualidades e sombras nele presente. É bem provável que você possua as qualidades e necessite dar atenção aos aspectos “negativos”, ou seja, aquilo necessita da sua atenção para um desenvolvimento mais equilibrado.</p>
+        <hr width=50%>
+        <p>O seu arquétipo menos ativo é</p>
+        <center><img src="assets/imgs/o_%DISTANTE%_12_arquetipos.jpg"></center>
+        <p>Dentre as características demonstradas neste arquétipo observe as qualidades e sombras nele presente. É bem provável que as qualidades desse arquétipo necessitem ser desenvolvidas em sua vida. Observe o que este arquétipos tem para complementar no processo pessoal.</p>
+        <hr width=50%>
+        <br>
+        <p>
+            Você pode se aprofundar e conhecer mais a respeito no curso
+            <br>
+            <br>
+            <b>OS 12 ARQUÉTIPOS E A JORNADA DO HERÓI COMO APLICAÇÃO TERAPÊUTICA</b>
+        </p>
+        <p>Início dia <b>02/09</b></P>
+        <p>Conheça a força do trabalho com os 12 arquétipos<br>e o caminho para aplicação terapêutica de forma lúdica e instigante.</p>
+        <p>Neste curso você irá aprender como trabalhar e aplicar o conhecimento sobre os 12 arquétipos comuns<br>e a jornada do herói em qualquer abordagem terapêutica.</p> 
+        <p>
+            <b>►</b> Conhecer cada um dos 12 arquétipos e suas relações com o processo de autoconhecimento.<br>
+            <b>►</b> Também receberá um arquivo exclusivo das 12 fichas dos arquétipos com imagens coloridas<br>
+            com todos os 12 arquétipos e as principais informações.
+        </p>
+        <p><b>Certificado de Conclusão</b></p>
+        <a href="https://www.ojogodavida.com.br/mahalilah/"><button class="button button1">SAIBA MAIS!</button></a>
+        <br><br><br><br>
+        </article>
+</section>
+<style>
+    p{
+        font-size: 22px;
+        margin-bottom: 1.5em;
+        margin-left: 4.5em;
+        margin-right: 4.5em;
+        line-height: 1.4em;
+    }
+    .button{
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+    .button1{
+        background-color: white;
+        color: black;
+        border: 2px solid #3E6990;
+    }
+    .button1:hover{
+        background-color: #3E6990;
+        color: white;
+    }
+    #bannerGeral{
+        width: 1200px;
+        height: 300px;
+        background: #3E6990;
+        margin: 0 auto;
+    }
+    #bannerGeral h1{
+        text-align: center;
+        padding-top: 20px;
+    }
+    #topo{
+        background: #ccc;
+        width: 1200px;
+        margin: 0 auto;
+        padding: 0px;
+        text-align: center;
+        margin-top: 0px;
+    }
+    #content{
+        background: #EFEBCE;
+        float: left;
+        height: auto;
+        width: 1200px;
+        text-align: center;
+        padding: 0px;
+    }
+</style>

@@ -290,9 +290,7 @@ let json = [
 ];
 
 $(document).ready(function () {
-    //console.log(Object.keys(json).length)
     let container_all_questions = document.getElementById("container_cards")
-    //console.log(container_all_questions.children)
 
     function criarPergunta(question) {
         let pergunta_container = document.createElement("div")
@@ -311,20 +309,18 @@ $(document).ready(function () {
         container_all_questions.appendChild(pergunta_container)
 
         for (let i = 0; i <= 5; i++) {
-
-            let concordo = document.createElement("span")
-            concordo.innerText = "Concordo"
-            console.log(concordo)
-            pergunta_container.children[1].appendChild(concordo)
-
             let select = document.createElement("label")
             select.className = 'custom-radio-btn'
             select.appendChild(document.createElement("input"))
             select.children[0].setAttribute("name", "opcoes")
             select.children[0].setAttribute("type", "radio")
-            select.children[0].setAttribute("value", i)
+            select.children[0].setAttribute("value", i + 1)
 
-            let selectorString = question.ID + '-' + i
+            if(i == 2){
+                select.children[0].setAttribute("checked", 'checked')
+            }
+
+            let selectorString = question.ID + '-' + i + 1
             select.children[0].setAttribute("name", question.ID)
 
             select.children[0].setAttribute("id", selectorString)
@@ -334,50 +330,44 @@ $(document).ready(function () {
             select.children[1].setAttribute('for', selectorString)
 
             pergunta_container.children[1].appendChild(select)
-
-            let discordo = document.createElement("span")
-            discordo.innerText = "Discordo"
-            console.log(discordo)
-            pergunta_container.children[1].appendChild(discordo)
-
         }
 
     }
 
     function seguir_voltar() {
-        console.log("Chamando função")
         for (let i = 2; i < container_all_questions.length; i++) {
             container_all_questions.children[i].remove
         }
     }
 
+
+    let windowWidth = window.innerWidth;
     let size = 4
 
-    if(windowWidth < 1000){
-        size = 2;
-    }
-    if(windowWidth < 800){
-        size = 1;
-    }
+    // if (windowWidth < 1000) {
+    //     size = 2;
+    // }
+    // if (windowWidth < 800) {
+    //     size = 3;
+    // }
     let step = 0
 
 
-    $( window ).resize(function() {
+    $(window).resize(function () {
 
         let windowWidth = window.innerWidth;
         let size = 4
-    
-        if(windowWidth > 996  && windowWidth < 1002){
-            size = 2;
+
+        if (windowWidth > 996 && windowWidth < 1002) {
+            // size = 2;
             location.reload();
 
         }
-        if(windowWidth < 800 && windowWidth > 795){
-            size = 1;
+        if (windowWidth < 800 && windowWidth > 795) {
+            // size = 1;
             location.reload();
 
         }
-        // let step = 0
 
     });
 
@@ -391,7 +381,9 @@ $(document).ready(function () {
         return lastStep;
     }
 
-    addCards(step, size);
+    let lastStep =  addCards(step, size);
+    updateCounter(lastStep);
+
 
     function loadCards() {
         let cards = document.querySelectorAll('#card')
@@ -399,16 +391,74 @@ $(document).ready(function () {
         let lastStep = lastCard.attr('step')
 
         cards.forEach((item) => {
-            console.log(item)
             item.classList.add('invisible')
         })
+        
+        if(lastStep == json.length){
+            setMessager()
+            initContactForm()
+            return
+        }
 
-        addCards(lastStep, size)
-
+       let finalStep =  addCards(lastStep, size)
+        updateCounter(finalStep);
     }
-
     $('#seta_seguir').click(() => {
         loadCards()
     })
 
+
+    function updateCounter(step)
+    {
+        let counter = document.getElementById('counter')
+
+        let painel = ''+step+'/'+json.length
+        counter.innerText = painel
+    }
+
+    function setMessager()
+    {
+        let message = 'Obrigado por responder nosso formulario, deixe-nos saber seu nome e e-mail'
+        let messager = document.getElementById('messenger')
+        messager.innerText = message
+    }
+
+    function initContactForm(){
+
+        let botaoSetaSeguir = document.getElementById('seta_seguir')
+        botaoSetaSeguir.remove()
+
+        let form = document.getElementById('form')
+        let button = document.createElement('button')
+
+
+        button.setAttribute('type' , 'submit')
+        button.classList.add('button-submit')
+        button.innerText = 'Enviar'
+
+
+        let divContact = document.createElement('div')
+        divContact.classList.add('form-group')
+        divContact.classList.add('contact-form')
+
+
+    
+        let nameInput = document.createElement('input')
+        nameInput.setAttribute('type' , 'text')
+        nameInput.setAttribute('name' , 'nome')
+
+           
+        let emailInput = document.createElement('input')
+        emailInput.setAttribute('type' , 'text')
+        emailInput.setAttribute('name' , 'email')
+
+
+        divContact.appendChild(nameInput)
+        divContact.appendChild(emailInput)
+        divContact.appendChild(button)
+
+
+        form.append(divContact)
+
+    }
 })

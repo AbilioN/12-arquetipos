@@ -1,0 +1,15 @@
+#seta_seguir:hover{
+    cursor: pointer;
+    background-color: #A00F0F;
+    position: relative;
+    bottom: 1px;
+    box-shadow: -2px 2px #530F0F;
+}
+
+#seta_seguir:active{
+    cursor: pointer;
+    background-color: #720F0F;
+    position: relative;
+    bottom: 3px;
+    box-shadow: -3px 4px #3F0F0F;
+}

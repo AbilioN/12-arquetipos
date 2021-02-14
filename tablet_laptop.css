@@ -69,6 +69,7 @@
     }
 
     .tutorial > div:nth-child(1){
+        color: azure;   
         display: flex;
         flex-direction: column;
         border-bottom: 1px solid azure;

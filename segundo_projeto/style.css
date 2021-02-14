@@ -1,0 +1,251 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+ 
+body,a,ul,li{
+     margin: 0;
+     padding: 0;
+     text-decoration: none;
+     color: azure;
+}
+ 
+li{
+     list-style-type: none;
+}
+ 
+p,a,li,span{
+   font-size: 1em;
+}
+ 
+h1, h3{
+   font-size: 1.2em;
+}
+ 
+h2{
+   font-size: 1.6em;
+}
+h4{
+   font-size: 1.1em;
+}
+ 
+.grid{
+     display: grid;
+     grid-template-columns: repeat(12, 1fr);
+     box-sizing: border-box;
+}
+
+.container_geral{
+    display: flex;
+    flex-direction: column;
+}
+
+.imagem{
+    height: 300px;
+    border-bottom: 1px solid #707070;
+}
+.imagem > img {
+   display: block;
+   width: 100%;
+   height: 100%;
+}
+
+.anunciado{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 220px;
+   padding: 20px 20px 20px 20px;
+   text-align: center;
+}
+
+.anunciado > img{
+   display: block;
+   width: 20px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+.anunciado span:nth-child(1){
+   font-size: 16px;
+   font-weight: bold;
+   font-style:italic;
+   color: #1F2326;
+}
+
+.anunciado span:nth-child(3){
+   color: #1F2326;
+}
+
+
+.instrucoes{
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   padding: 15px 20px 15px 20px;
+   height: 200px;
+   background-color: #F2EEED;
+   margin-bottom: 140px;
+   border-top: 1px solid #707070;
+   border-bottom: 1px solid #707070;
+}
+
+.instrucoes > cite{
+   color: #F3B00F;
+   font-weight: bold;
+   text-align: center;
+   margin-bottom: 10px;
+}
+
+.instrucoes > span{
+   color: black;
+   text-align: center;
+}
+
+.instrucao_flutuante{
+   width: 290px;
+   height: 170px;
+   position: relative;
+   top: 10px;
+   text-align: center;
+   color: black;
+   padding: 15px 20px 15px 20px;
+   border: 3px solid #CCA577;
+   background-color: white;
+}
+
+.instrucao_flutuante2{
+   position: relative;
+   top: 35px;
+   background-color: #CCA577;
+   text-align: center;
+   padding: 5px;
+   color: white;
+   font-weight: bold;
+   font-style: italic;
+}
+
+#perguntas{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 30px;
+}
+
+#container_cards{
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   padding-top: 10px;
+   padding-bottom: 10px;
+}
+
+.pergunta_opcoes{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 10px;
+   border-top: 1px solid #707070;
+}
+
+.pergunta_opcoes > span{
+   color: #707070;
+   font-weight: bold;
+   text-align: center;
+}
+
+.pergunta_opcoes > div{
+   display: flex;
+   padding: 10px;
+}
+
+.invisible{
+   display: none;
+}
+
+#seta_seguir{
+   font-size: 20px;
+   font-weight: bolder;
+   font-style: italic;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #BF0F0F;
+   height: 40px;
+   width: 150px;
+   margin: 5px;
+}
+
+#counter{
+   font-size: 2em;
+
+   color: #CCA577;
+   align-self: center;
+
+}
+
+#messenger{
+   font-size: 1em;
+
+   color: #CCA577;
+   align-self: center;
+}
+
+.contact-form{
+   display: flex;
+   flex-direction: column;
+   
+}
+
+/* .contact-form input{
+   width: 50%;
+   align-self: center;
+   margin-top: 20px;
+} */
+
+.contact-form input[type=text], select {
+   width: 50%;
+   align-self: center;
+   margin-top: 20px;
+
+   padding: 12px 20px;
+   margin: 8px 0;
+   display: inline-block;
+   border: 1px solid #CCA577;
+   border-radius: 4px;
+   box-sizing: border-box;
+ }
+
+ .contact-form input[type=text]:focus{
+   outline: none !important;
+   border-color: #F3B00F;
+   box-shadow: 0 0 10px #F3B00F;
+ }
+
+ .button-submit{
+    align-self: center;
+    border-radius: 4%;
+    font-size: 20px;
+    font-weight: bolder;
+    font-style: italic;
+    align-self: center;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    background-color: #BF0F0F;
+    color: white;
+    height: 40px;
+    width: 150px;
+    /* margin: 5px; */
+
+ }
+
+ .button-submit:hover{
+   cursor: pointer;
+   background-color: #A00F0F;
+   position: relative;
+   bottom: 1px;
+   box-shadow: -2px 2px #530F0F;
+ }
