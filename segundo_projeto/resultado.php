@@ -41,11 +41,7 @@
         
         $resultados["bobo"] = $entry[16] + $entry[48] + $entry[46] + $entry[29] + $entry[71] + $entry[12];
         
-       // var_dump($resultados);
-        
-        arsort($resultados);
 
-        var_dump($resultados);
 
         $firstkey = array_keys($resultados)[0];
         $lastkey = array_keys($resultados)[count($resultados) - 1];
@@ -105,7 +101,7 @@
     $arquetipos = processar_teste($_POST);
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     $nome = filter_var($_POST['nome'], FILTER_SANITIZE_STRING);
-    initMailer($email, $nome);
+    // initMailer($email, $nome);
     $pagina_resultados = str_replace('%PROXIMO%', $arquetipos[0], $pagina_resultados);
     $pagina_resultados = str_replace('%DISTANTE%', $arquetipos[1], $pagina_resultados);
 
@@ -120,7 +116,7 @@
         ]
     );
 
-    initMailer();
+    // initMailer();
 
 
     echo($pagina_resultados);
