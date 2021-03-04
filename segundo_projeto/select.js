@@ -334,6 +334,10 @@ $(document).ready(function () {
 
             if(i == 2){
                 select.children[0].setAttribute("checked", 'checked')
+
+                messageDiv.classList.add('neutro')
+                messageDiv.innerText = 'Neutro'
+
             }
 
             let selectorString = question.ID + '-' + i + 1
@@ -521,12 +525,9 @@ $(document).ready(function () {
         }
 
         let divmessage = $('#mensagem-div-'+this.name);
-        let span = document.createElement('h1');
-        span.text = '';
-        span.text = displayMessage;
+     
 
-        // divmessage.innerHTML = '';
-        // divmessage.innerHTML = displayMessage;
+
         divmessage.removeClass('positivo');
         divmessage.removeClass('neutro');
         divmessage.removeClass('negativo');
@@ -535,11 +536,6 @@ $(document).ready(function () {
         divmessage.addClass(className);
         divmessage.text('');
         divmessage.html(displayMessage);
-
-        // divmessage.append(span);
-
-        // $('#mensagem-div-'+this.name).innerText = '';
-        // $('#mensagem-div-'+this.name).innerText = displayMessage;
 
 
     })
