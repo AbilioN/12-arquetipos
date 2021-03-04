@@ -67,13 +67,21 @@
             $mail->Host = 'smtp.gmail.com';
             $mail->Port = 587;
             // Define o remetente
-            $mail->setFrom('netobalby@gmail.com', 'Mix Viagens');
+            $mail->setFrom('ojogodavida.hd@gmail.com', 'O jogo da vida');
             // Define o destinatário
             $mail->addAddress("{$email}", "{$nome}");
             // Conteúdo da mensagem
             $mail->isHTML(true);  // Seta o formato do e-mail para aceitar conteúdo HTML
-            $mail->Subject = 'Teste';
+            $mail->Subject = 'O jogo da vida';
             $mail->Body    = '<b>12 Arquetipos</b>';
+
+            $mail->Body .= 'Muito obrigado por fazer o teste para descobrir seu Arquetipo predominante';
+
+
+            $mail->Body .= '<img src="cid:image" />';
+            $mail->AddEmbeddedImage('/logo.png' , 'image');
+
+
             $mail->AltBody = 'Este é o cortpo da mensagem para clientes de e-mail que não reconhecem HTML';
             // Enviar
             if($mail->send()){

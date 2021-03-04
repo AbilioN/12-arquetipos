@@ -350,7 +350,7 @@ $(document).ready(function () {
             select.children[1].setAttribute('for', selectorString)
 
             pergunta_container.children[1].appendChild(select)
-            
+            setDisplayMessengers()
         }
 
     }
@@ -428,6 +428,8 @@ $(document).ready(function () {
     }
     $('#seta_seguir').click(() => {
         loadCards()
+        setDisplayMessengers()
+
     })
 
 
@@ -486,57 +488,63 @@ $(document).ready(function () {
 
     }
 
+    function setDisplayMessengers(){
+        $('.display-option').on('click' , function(){
+
+            // this.displayMessage = '';
+            // this.className = '';
     
-    $('.display-option').on('click' , function(){
+            console.log(this.value);
+            console.log(this.name);
+    
+    
+            if(this.value == 1)
+            {
+                displayMessage = 'Discordo totalmente'
+                className = 'negativo'
+            }
+    
+            if(this.value == 2)
+            {
+    
+                displayMessage = 'Discordo parcialmente'
+                className = 'negativo'
+            }
+            if(this.value == 3)
+            {
+    
+                displayMessage = 'Neutro'
+                className = 'neutro'
+            }
+            if(this.value == 4)
+            {
+    
+                displayMessage = 'Concordo parcialmente'
+                className = 'positivo'
+            }
+            if(this.value == 5)
+            {
+    
+                displayMessage = 'Concordo totalmente'
+                className = 'positivo'
+            }
+    
+            let divmessage = $('#mensagem-div-'+this.name);
+         
+    
+    
+            divmessage.removeClass('positivo');
+            divmessage.removeClass('neutro');
+            divmessage.removeClass('negativo');
+    
+    
+            divmessage.addClass(className);
+            divmessage.text('');
+            divmessage.html(displayMessage);
+    
+    
+        })
+    }
 
-        // this.displayMessage = '';
-        // this.className = '';
-
-
-        if(this.value == 1)
-        {
-            displayMessage = 'Discordo totalmente'
-            className = 'negativo'
-        }
-
-        if(this.value == 2)
-        {
-
-            displayMessage = 'Discordo parcialmente'
-            className = 'negativo'
-        }
-        if(this.value == 3)
-        {
-
-            displayMessage = 'Neutro'
-            className = 'neutro'
-        }
-        if(this.value == 4)
-        {
-
-            displayMessage = 'Concordo parcialmente'
-            className = 'positivo'
-        }
-        if(this.value == 5)
-        {
-
-            displayMessage = 'Concordo totalmente'
-            className = 'positivo'
-        }
-
-        let divmessage = $('#mensagem-div-'+this.name);
-     
-
-
-        divmessage.removeClass('positivo');
-        divmessage.removeClass('neutro');
-        divmessage.removeClass('negativo');
-
-
-        divmessage.addClass(className);
-        divmessage.text('');
-        divmessage.html(displayMessage);
-
-
-    })
+    
 })
