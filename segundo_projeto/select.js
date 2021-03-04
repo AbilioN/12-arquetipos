@@ -292,6 +292,7 @@ let json = [
 $(document).ready(function () {
     let container_all_questions = document.getElementById("container_cards")
 
+
     function criarPergunta(question) {
         let pergunta_container = document.createElement("div")
         pergunta_container.className = 'pergunta_opcoes'
@@ -302,19 +303,34 @@ $(document).ready(function () {
         pergunta_container.children[0].innerText = question.QUESTION
 
 
-        let div = document.createElement("div");
+
+        let div = document.createElement("div")
         div.className = 'form-group'
 
+        let messageDiv = document.createElement("div")
+        messageDiv.className = 'mensagem-div'
+        messageDiv.id = 'mensagem-div-'+question.ID;
+
+
         pergunta_container.appendChild(div)
+        pergunta_container.appendChild(messageDiv)
+
         container_all_questions.appendChild(pergunta_container)
 
         for (let i = 0; i <= 5; i++) {
+
+
             let select = document.createElement("label")
             select.className = 'custom-radio-btn'
             select.appendChild(document.createElement("input"))
             select.children[0].setAttribute("name", "opcoes")
             select.children[0].setAttribute("type", "radio")
             select.children[0].setAttribute("value", i + 1)
+            select.children[0].setAttribute("class", "display-option")
+
+
+            // select.children[0].setAttribute("onclick" , "displayMessage("+i+")");
+
 
             if(i == 2){
                 select.children[0].setAttribute("checked", 'checked')
@@ -330,10 +346,12 @@ $(document).ready(function () {
             select.children[1].setAttribute('for', selectorString)
 
             pergunta_container.children[1].appendChild(select)
+            
         }
 
     }
 
+    
     function seguir_voltar() {
         for (let i = 2; i < container_all_questions.length; i++) {
             container_all_questions.children[i].remove
@@ -351,6 +369,7 @@ $(document).ready(function () {
     //     size = 3;
     // }
     let step = 0
+
 
 
     $(window).resize(function () {
@@ -423,6 +442,7 @@ $(document).ready(function () {
         messager.innerText = message
     }
 
+    
     function initContactForm(){
 
         let botaoSetaSeguir = document.getElementById('seta_seguir')
@@ -461,4 +481,66 @@ $(document).ready(function () {
         form.append(divContact)
 
     }
+
+    
+    $('.display-option').on('click' , function(){
+
+        // this.displayMessage = '';
+        // this.className = '';
+
+
+        if(this.value == 1)
+        {
+            displayMessage = 'Discordo totalmente'
+            className = 'negativo'
+        }
+
+        if(this.value == 2)
+        {
+
+            displayMessage = 'Discordo parcialmente'
+            className = 'negativo'
+        }
+        if(this.value == 3)
+        {
+
+            displayMessage = 'Neutro'
+            className = 'neutro'
+        }
+        if(this.value == 4)
+        {
+
+            displayMessage = 'Concordo parcialmente'
+            className = 'positivo'
+        }
+        if(this.value == 5)
+        {
+
+            displayMessage = 'Concordo totalmente'
+            className = 'positivo'
+        }
+
+        let divmessage = $('#mensagem-div-'+this.name);
+        let span = document.createElement('h1');
+        span.text = '';
+        span.text = displayMessage;
+
+        // divmessage.innerHTML = '';
+        // divmessage.innerHTML = displayMessage;
+        divmessage.removeClass('positivo');
+        divmessage.removeClass('neutro');
+        divmessage.removeClass('negativo');
+
+
+        divmessage.addClass(className);
+        divmessage.text('');
+        divmessage.html(displayMessage);
+
+        // divmessage.append(span);
+
+        // $('#mensagem-div-'+this.name).innerText = '';
+        // $('#mensagem-div-'+this.name).innerText = displayMessage;
+
+
+    })
 })

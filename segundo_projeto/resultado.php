@@ -53,6 +53,7 @@
     {
         try
         {
+       
             // Configurações do servidor
             $mail = new PHPMailer();
             $mail->isSMTP();        //Devine o uso de SMTP no envio
@@ -96,12 +97,14 @@
     {
 
     }
+
+
     $pagina_resultados = file_get_contents('./resultado.shtml');
 
     $arquetipos = processar_teste($_POST);
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     $nome = filter_var($_POST['nome'], FILTER_SANITIZE_STRING);
-    // initMailer($email, $nome);
+    initMailer($email, $nome);
     $pagina_resultados = str_replace('%PROXIMO%', $arquetipos[0], $pagina_resultados);
     $pagina_resultados = str_replace('%DISTANTE%', $arquetipos[1], $pagina_resultados);
 
