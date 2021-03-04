@@ -49,7 +49,7 @@
         return array(urlencode($firstkey), urlencode($lastkey));
     }
 
-    function initMailer($email, $nome)
+    function initMailer($email, $nome , $arquetipo)
     {
         try
         {
@@ -60,7 +60,7 @@
             $mail->SMTPAuth = true; //Habilita a autenticação SMTP
             $mail->Username   = 'mixx.viagens@gmail.com';
             $mail->Password   = 'mix$123$456$789';
-            $mail->SMTPDebug = 2;
+            // $mail->SMTPDebug = 2;
             // Criptografia do envio SSL também é aceito
             $mail->SMTPSecure = 'tls';
             // Informações específicadas pelo Google
@@ -73,48 +73,59 @@
             // Conteúdo da mensagem
             $mail->isHTML(true);  // Seta o formato do e-mail para aceitar conteúdo HTML
             $mail->Subject = 'O jogo da vida';
-            $mail->Body    = '<b>12 Arquetipos</b>';
+            $mail->Body    = '<div style="font-size: 16px; width: 100%; margin-top:20px; margin-bottom:20px; color: black;">12 Arquetipos</div>';
 
-            $mail->Body .= 'Muito obrigado por fazer o teste para descobrir seu Arquetipo predominante';
-
-
-            $mail->Body .= '<img src="cid:image" />';
-            $mail->AddEmbeddedImage('/logo.png' , 'image');
+            $mail->Body .= '<div style="font-size:12px" width: 100%; margin-top:20px; margin-bottom:20px; color: black;> Ola! '. $nome .' muito obrigado por fazer o teste para descobrir seu Arquetipo predominante </div>';
 
 
-            $mail->AltBody = 'Este é o cortpo da mensagem para clientes de e-mail que não reconhecem HTML';
-            // Enviar
+
+            // $mail->addStringAttachment(file_get_contents('/https://picsum.photos/200/300') , 'image');
+            $mail->AddEmbeddedImage('o_'.$arquetipo.'_12_arquetipos.jpg','logoimg');
+
+            $mail->Body .= "<img src=\"cid:logoimg\" />";
+
+
+            $mail->Body .= '<div style="font-size:12px" width: 100%; margin-top:20px; margin-bottom:20px; color: black;>
+            Conheça mais sobre 12 Arquétipos através do nosso Curso de Formação 12 Arquétipos:
+            </div>
+            
+            <div style="font-size:12px" width: 100%; margin-top:20px; margin-bottom:20px;>https://cursos.ojogodavida.com.br/12arquetipos</div>
+            <div style="font-size:12px" width: 100%; margin-top:20px; margin-bottom:20px; color: black;>
+            Nickson Gabriel
+            Diretor Instituto O Jogo da Vida</div>';
+
+        
             if($mail->send()){
-                echo 'A mensagem foi enviada!';
-                
+                return true;
             }else{
-                echo 'A mensagem nao foi enviada!';
-
+                return false;
             }
         }
         catch (Exception $e)
         {
-            echo "Message could not be sent. Mailer Error: {$e->getMessage()}";
+            echo "Message could not be sent, contate o desenvolvedor . Mailer Error: {$e->getMessage()}";
         }
 
 
         
     }
 
-    function enviarEmail($email, $nome, $mailer)
-    {
-
-    }
-
-
-    $pagina_resultados = file_get_contents('./resultado.shtml');
+    // $pagina_resultados = file_get_contents('./resultado.shtml');
 
     $arquetipos = processar_teste($_POST);
+    var_dump($arquetipos);
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     $nome = filter_var($_POST['nome'], FILTER_SANITIZE_STRING);
-    initMailer($email, $nome);
-    $pagina_resultados = str_replace('%PROXIMO%', $arquetipos[0], $pagina_resultados);
-    $pagina_resultados = str_replace('%DISTANTE%', $arquetipos[1], $pagina_resultados);
+    $enviado = initMailer($email, $nome , $arquetipos[0]);
+
+    if($enviado){
+        $paginaFinal = file_get_contents('./paginafinal.phtml');
+    }else{
+        $paginaFinal = file_get_contents('./erro.phtml');
+
+    }
+    // $pagina_resultados = str_replace('%PROXIMO%', $arquetipos[0], $pagina_resultados);
+    // $pagina_resultados = str_replace('%DISTANTE%', $arquetipos[1], $pagina_resultados);
 
     $db = new JSONDB('database');
 
@@ -127,7 +138,6 @@
         ]
     );
 
-    // initMailer();
 
 
-    echo($pagina_resultados);
+    echo($paginaFinal);
