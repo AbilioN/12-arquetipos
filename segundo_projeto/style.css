@@ -298,3 +298,14 @@ h4{
    width: 100%;
 
 }
+
+
+.resultado-final{
+   font-size: 1.4em;
+   display: flex;
+   margin-top: 30px;
+   margin-bottom: 30px;
+   width:80%;
+   color: #BF8F65;
+
+}

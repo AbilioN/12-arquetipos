@@ -79,7 +79,7 @@
             // Conteúdo da mensagem
             $mail->isHTML(true);  // Seta o formato do e-mail para aceitar conteúdo HTML
             $mail->Subject = 'O jogo da vida';
-            $mail->Body    = '<div style="font-size: 16px; width: 100%; margin-top:20px; margin-bottom:20px; color: black;">12 Arquetipos</div>';
+            $mail->Body = '<div style="font-size: 16px; width: 100%; margin-top:20px; margin-bottom:20px; color: black;">12 Arquetipos</div>';
 
             $mail->Body .= '<div style="font-size:12px" width: 100%; margin-top:20px; margin-bottom:20px; color: black;> Ola! '. $nome .' muito obrigado por fazer o teste para descobrir seu Arquetipo predominante </div>';
 
@@ -119,9 +119,12 @@
     // $pagina_resultados = file_get_contents('./resultado.shtml');
 
     $arquetipos = processar_teste($_POST);
-    var_dump($arquetipos);
+  
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     $nome = filter_var($_POST['nome'], FILTER_SANITIZE_STRING);
+    $terapeuta = filter_var($_POST['terapeut']);
+
+   
     $enviado = initMailer($email, $nome , $arquetipos[0]);
 
     if($enviado){
@@ -130,8 +133,6 @@
         $paginaFinal = file_get_contents('./erro.phtml');
 
     }
-    // $pagina_resultados = str_replace('%PROXIMO%', $arquetipos[0], $pagina_resultados);
-    // $pagina_resultados = str_replace('%DISTANTE%', $arquetipos[1], $pagina_resultados);
 
     $db = new JSONDB('database');
 
@@ -140,7 +141,7 @@
             'nome' => $nome,
             'email' => $email,
             'proximo' => $arquetipos[0],
-            'distante' => $arquetipos[1]
+            'terapeuta' => $terapeuta
         ]
     );
 
