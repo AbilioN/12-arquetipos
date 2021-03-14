@@ -471,18 +471,78 @@ $(document).ready(function () {
     
         let nameInput = document.createElement('input')
         nameInput.setAttribute('type' , 'text')
+        nameInput.setAttribute('placeholder' , 'Nome')
         nameInput.setAttribute('name' , 'nome')
 
            
         let emailInput = document.createElement('input')
         emailInput.setAttribute('type' , 'text')
         emailInput.setAttribute('name' , 'email')
+        emailInput.setAttribute('placeholder' , 'Email')
+
+
+
+
+        let divTerapeuta = document.createElement('div')
+
+        divTerapeuta.className = 'form-group divterapeuta'
+
+
+
+
+        let terapeutaInput = document.createElement('input')
+
+        terapeutaInput.setAttribute('type' , 'radio')
+        terapeutaInput.setAttribute('name' , 'terapeut')
+        terapeutaInput.setAttribute('value' , true)
+
+        let tereutaLabel = document.createElement('label')
+        tereutaLabel.innerText = 'Sou Psicólogo / Já sou Terapueta / Em formação para ser Terapeuta'
+
+        
+        let naoTerapeutaInput = document.createElement('input')
+
+        naoTerapeutaInput.setAttribute('type' , 'radio')
+        naoTerapeutaInput.setAttribute('name' , 'terapeut')
+        naoTerapeutaInput.setAttribute('value' , false)
+
+        let naoTerapeutaLabel = document.createElement('label')
+        naoTerapeutaLabel.innerText = 'Não sou terapeuta'
+
+
+        let terapeutaInputDiv = document.createElement('div')
+        let naoterapeutaInputDiv = document.createElement('div')
+
+        terapeutaInputDiv.setAttribute('class', 'optiondiv')
+        naoterapeutaInputDiv.setAttribute('class', 'optiondiv')
+
+
+        terapeutaInputDiv.appendChild(terapeutaInput)
+        terapeutaInputDiv.appendChild(tereutaLabel)
+
+        naoterapeutaInputDiv.appendChild(naoTerapeutaInput)
+        naoterapeutaInputDiv.appendChild(naoTerapeutaLabel)
+
+        
+
+
+
+        divTerapeuta.appendChild(terapeutaInputDiv)
+        divTerapeuta.appendChild(naoterapeutaInputDiv)
+
 
 
         divContact.appendChild(nameInput)
         divContact.appendChild(emailInput)
-        divContact.appendChild(button)
+        divContact.appendChild(divTerapeuta);
+        divContact.appendChild(divTerapeuta);
 
+        // divContact.appendChild(tereutaLabel)
+        // divContact.appendChild(terapeutaInput)
+
+
+
+        divContact.appendChild(button)
 
         form.append(divContact)
 

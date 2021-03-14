@@ -658,5 +658,47 @@
         "email": "netobalby@gmail.com",
         "proximo": "destruidor",
         "distante": "bobo"
+    },
+    {
+        "nome": "neto",
+        "email": "netobalby@gmail.com",
+        "proximo": "destruidor",
+        "distante": "bobo"
+    },
+    {
+        "nome": "neto",
+        "email": "netobalby@gmail.com",
+        "proximo": "destruidor",
+        "distante": "bobo"
+    },
+    {
+        "nome": "neto",
+        "email": "netobalby@gmail.com",
+        "proximo": "destruidor",
+        "distante": "bobo"
+    },
+    {
+        "nome": "neto",
+        "email": "netobalby@gmail.com",
+        "proximo": "destruidor",
+        "distante": "bobo"
+    },
+    {
+        "nome": "neto",
+        "email": "netobalby@gmail.com",
+        "proximo": "bobo",
+        "distante": 29
+    },
+    {
+        "nome": "neto",
+        "email": "netobalby@gmail.com",
+        "proximo": "bobo",
+        "distante": 29
+    },
+    {
+        "nome": "",
+        "email": "",
+        "proximo": "bobo",
+        "distante": 18
     }
 ]

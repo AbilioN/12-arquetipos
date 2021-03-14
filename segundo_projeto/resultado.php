@@ -15,7 +15,6 @@
 
     function processar_teste($entry){
         $resultados = array();
-       // var_dump($entry);
 
         $resultados["destruidor"] = $entry[27] + $entry[53] + $entry[56] + $entry[8] + $entry[31] + $entry[72];
         
@@ -42,11 +41,18 @@
         $resultados["bobo"] = $entry[16] + $entry[48] + $entry[46] + $entry[29] + $entry[71] + $entry[12];
         
 
-
-        $firstkey = array_keys($resultados)[0];
-        $lastkey = array_keys($resultados)[count($resultados) - 1];
-
-        return array(urlencode($firstkey), urlencode($lastkey));
+        $maior = 0;
+        $arquetipo = '';
+        foreach($resultados as $key => $value)
+        {
+            if($value >= $maior)
+            {
+                $arquetipo = $key;
+                $maior = $value;
+            }
+        }
+        
+        return [$arquetipo, $maior];
     }
 
     function initMailer($email, $nome , $arquetipo)
