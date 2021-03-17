@@ -305,7 +305,8 @@ h4{
    display: flex;
    margin-top: 30px;
    margin-bottom: 30px;
-   width:80%;
+   width:100%;
    color: #BF8F65;
+   justify-content: center;
 
 }

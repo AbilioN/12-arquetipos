@@ -2,24 +2,24 @@
     cursor: pointer;
     width: 33px;
     height: 33px;
-    border: 2px solid #59364A;
+    border: 2px solid #BF8F65;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 10px;
 }
 
 .custom-radio-btn:nth-child(2) {
     cursor: pointer;
     width: 28px;
     height: 28px;
-    border: 2px solid #59364A;
+    border: 2px solid #BF8F65;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 10px;
-    margin-bottom: 20px;
 }
 
 .custom-radio-btn:nth-child(3) {
@@ -32,33 +32,30 @@
     justify-content: center;
     align-items: center;
     margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 30px;
 }
 
 .custom-radio-btn:nth-child(4) {
     cursor: pointer;
     width: 28px;
     height: 28px;
-    border: 2px solid #56A681;
+    border: 2px solid #6F4C5E;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 10px;
-    margin-bottom: 20px;
+    margin-left: 10px;
 }
 
 .custom-radio-btn:nth-child(5) {
     cursor: pointer;
     width: 33px;
     height: 33px;
-    border: 2px solid #56A681;
+    border: 2px solid #6F4C5E;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    margin-left: 10px;
 }
 
 .custom-radio-btn input {
@@ -77,12 +74,12 @@
 
 .custom-radio-btn:nth-child(1) input:checked + span.checkmark {
     opacity: 1;
-    background-color: #59364A;
+    background-color: #BF8F65;
 }
 
 .custom-radio-btn:nth-child(2) input:checked + span.checkmark {
     opacity: 1;
-    background-color: #59364A;
+    background-color: #BF8F65;
 }
 
 .custom-radio-btn:nth-child(3) input:checked + span.checkmark {
@@ -92,18 +89,10 @@
 
 .custom-radio-btn:nth-child(4) input:checked + span.checkmark {
     opacity: 1;
-    background-color: #56A681;
+    background-color: #6F4C5E;
 }
 
 .custom-radio-btn:nth-child(5) input:checked + span.checkmark {
     opacity: 1;
-    background-color: #56A681;
-}
-
-.invisible{
-    display: none !important;
-}
-
-.visible{
-    display: block !important;
+    background-color: #6F4C5E;
 }

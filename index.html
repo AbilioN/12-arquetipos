@@ -3,90 +3,73 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=10, minimum-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="mobile.css">
-    <link rel="stylesheet" href="tablet_laptop.css">
-    <link rel="stylesheet" href="desktop.css">
-    <link rel="stylesheet" href="estado_btn.css">
     <link rel="stylesheet" href="select.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pequeno.css">
+    <link rel="stylesheet" href="menos_pequeno.css">
+    <link rel="stylesheet" href="medio.css">
+    <link rel="stylesheet" href="largo.css">
+    <link rel="stylesheet" href="botao_estado.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="select.js" defer></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <title>12 Arquétipos</title>
 </head>
 
 <body>
-
     <div class="container_geral">
 
-        <div class="anunciado grid">
-            <img src="./imgs/12-arquetipos_fundo.jpg" alt="">
-            <div>
-                <span style="font-size: 1em;">Como fazer o seu</span>
-                <span style="font-size: 1.2em;"><strong>Teste 12 Arquétipos</strong></span>
-            </div>
-            <div>
-                <p>Este teste foi criado para que você se compreenda melhor através da identificação dos arquétipos que
-                    permeiam sua vida.</p>
-                <p>Os arquétipos são espécies de moldes ou padrões de comportamento, que definem formas específicas de
-                    ser.
-                    São
-                    também símbolos e imagens culturais que estão registrados no inconsciente coletivo.
-                </p>
-                <p>Todos os doze arquétipos são importantes e cada um trás consigo grandes dádivas e lições.
-                    Nenhum é melhor nem pior do que o outro. Cada um tem suas características próprias, assim, não
-                    existem
-                    respostas certas ou erradas.</p>
-                <p>De acordo com cada afirmação você marcará a alternativa que melhor lhe define, respeitando o grau de
-                    intensidade com o qual concorda ou discorda da afirmação.</p>
-                <p>O teste iniciará em NEUTRO por padrão.</p>
-            </div>
+        <div class="imagem">
+            <img src="./imgs/logo.png" alt="Logo">
         </div>
 
-        <div class="tutorial">
-
+        <div class="anunciado">
+            <span>
+                Este teste foi criado para que você se compreenda melhor através da
+                identificação dos arquétipos que permeiam sua vida.
+            </span>
+            <img src="./imgs/divisor.png" alt="">
+            <span>
+                Os arquétipos são espécies de moldes ou padrões de comportamento, que
+                definem formas específicas de ser. São também símbolos e imagens culturais
+                que estão registrados no inconsciente coletivo.
+            </span>
         </div>
 
-        <form name="dados" action="">
-            <div class="perguntas grid">
-                <div id="seta_voltar">
-                    <img style="width: 40px;" src="imgs/seta.svg" alt="">
+        <div class="instrucoes">
+            <cite>Todos os doze arquétipos são importantes e cada um trás consigo grandes dádivas e lições.</cite>
+            <span>Nenhum é melhor nem pior do que o outro. Cada um tem suas características próprias,
+                assim, não existem respostas certas ou erradas</span>
+            <div class="instrucao_flutuante">
+                De acordo com cada afirmação você marcará a alternativa que melhor lhe define, respeitando o grau
+                de intensidade com o qual concorda ou discorda da afirmação.
+                <div class="instrucao_flutuante2">
+                    O teste iniciará em NEUTRO por padrão.
                 </div>
+            </div>
+        </div>
+        <div id="counter">
+        </div>
+        <div id="messenger">
+        </div>
+        <form id="form" action="resultado.php" method="post">
+            <nav id="perguntas">
 
                 <div id="container_cards">
-
-
-
+    
                 </div>
-
-
                 <div id="seta_seguir">
-                    <img style="width: 40px;" src="imgs/seta.svg" alt="">
+                    Próximo
+                    <img style="width: 18px;margin-left: 4px; transform: rotate(-90deg)" src="imgs/seta.svg" alt="">
                 </div>
-            </div>
+            </nav>
         </form>
-        <div class="dados">
-            <div>
-                <form name="dados" action="">
-                    <span>Seus dados de contato:</span><br>
-                    <label for="nome">Nome:</label>
-                    <input id="nome" type="text">
-
-                    <label for="email">Email:</label>
-                    <input id="email" type="email">
-
-                    <button id="submit" type="submit">Enviar teste!</button>
-                </form>
-            </div>
-        </div>
-
     </div>
-
 </body>
 
 </html>

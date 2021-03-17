@@ -1,0 +1,14 @@
+[
+    {
+        "nome": "neto",
+        "email": "netobalby@gmail.com",
+        "proximo": "bobo",
+        "terapeuta": "false"
+    },
+    {
+        "nome": "netobalby",
+        "email": "netobalby@gmail.com",
+        "proximo": "bobo",
+        "terapeuta": "true"
+    }
+]
