@@ -17,8 +17,71 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="select.js" defer></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <title>12 Arquétipos</title>
+<style>
+    .imagem2 {
+        height:500px;
+        width:auto;
+    }
+    .imagem2 img{
+        height:100%;
+        width:auto;
+    }
+    .texto{
+        display:flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content:center;
+
+
+        font-size: 12px;
+        color: black;
+        margin: 5% 15% 5% 15%;
+   
+    }
+    .imagem3 {
+        height:500px;
+        width:auto;
+    }
+    .imagem3 img{
+        height:100%;
+        width:auto;
+    }
+    .conteudo{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content:space-around;
+
+    }
+    .youtube-icone{
+        color: #A00F0F;
+    }
+
+    .videolink{
+        display: flex;
+        align-items:center;
+        flex-direction: column;
+        width: 100%;
+        margin: 25px 0 25px 0;
+    }
+
+    .videolink-title{
+        color: black;
+    }
+    .titulo
+    {
+        margin: 25px 0 25px 0;
+        align-content: center;
+        justify-content:center;
+    }
+    /* .videolink-icon{
+        height: 150px;
+        width: auto;
+    } */
+</style>
 </head>
 
 <body>
@@ -34,12 +97,37 @@
                 identificação dos arquétipos que permeiam sua vida.
             </span>
         </div>
-        
-        <div class="resultado-final">
 
-         Email enviado com sucesso!
+        <div class="conteudo">
+            <div class="imagem2">
+                <img src="/imagem.jpeg" alt="">
+            </div>
+            <div class="texto">
+                <div class="titulo">
+                    O Arquetipo do %ARQUETIPO%
+                </div>
+                <div class="texto-conteudo">
+                    %TEXTO%
+                </div>
+            </div>
+            <div class="imagem3">   
+            <img src="assets/imgs/o_%ARQUETIPO%_12_arquetipos.jpg">
+            </div>
+            <div class="videolink">
+                <div class="videolink-title">
+                        Saiba mais:    
+                </div>
+                <div class="videolink-icon">
+                    <a href="%VIDEOLINK%"><i class="youtube-icone fa fa-youtube-play fa-3x"></i></a>
+
+                </div>
+            </div>
         </div>
-        <button onClick="JavaScript: window.history.back();" type="submit" class="button-submit">Voltar</button>
+        <!-- TODO retirar o comentario abaixo quando o problema com smtp com email for resolvido -->
+        <!-- <div class="resultado-final">
+        Email enviado com sucesso!
+        </div> -->
+        <button style="margin-bottom:20px;" onClick="JavaScript: window.history.back();" type="submit" class="button-submit">Voltar</button>
         
     </div>
 </body>

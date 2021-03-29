@@ -584,14 +584,12 @@ $(document).ready(function () {
             }
             if(this.value == 5)
             {
-    
                 displayMessage = 'Concordo totalmente'
                 className = 'positivo'
             }
     
             let divmessage = $('#mensagem-div-'+this.name);
          
-    
     
             divmessage.removeClass('positivo');
             divmessage.removeClass('neutro');
