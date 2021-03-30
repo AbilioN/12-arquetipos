@@ -65,13 +65,16 @@ h4{
 }
 
 .tittle{
-   font-size: 18px;
+   font-size: 1.5em;
    color: #F3B00F;
    align-self: center;
    margin-top: 30px;
    margin-bottom: 30px;
 
  }
+ .main-text{
+   font-size:1em;
+}
 
 .anunciado > img{
    display: block;

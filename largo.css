@@ -64,12 +64,15 @@
     }
     .tittle{
       
-      font-size: 25px;
+      font-size: 3em;
       color: #F3B00F;
       align-self: center;
       margin-top: 30px;
       margin-bottom: 30px;
 
+    }
+    .main-text{
+       font-size:1.5em;
     }
     .anunciado > img{
        display: block;

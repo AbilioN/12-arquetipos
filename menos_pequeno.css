@@ -72,6 +72,9 @@
       margin-bottom: 30px;
 
     }
+    .main-text{
+      font-size:1.1em;
+   }
     .anunciado > img{
        display: block;
        width: 20px;
