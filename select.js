@@ -459,6 +459,7 @@ $(document).ready(function () {
 
 
         button.setAttribute('type' , 'submit')
+        button.setAttribute('style' , 'margin-bottom:40px');
         button.classList.add('button-submit')
         button.innerText = 'Enviar'
 

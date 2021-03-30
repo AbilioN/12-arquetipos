@@ -56,8 +56,12 @@
        flex-direction: column;
        justify-content: center;
        align-items: center;
-       height: 220px;
-       padding: 20px 40px 20px 40px;
+       height: 100%;
+       font-size: 15px;
+       color: #1F2326;
+       margin: 10%;
+
+       /* padding: 20px 40px 20px 40px; */
        text-align: center;
     }
     
@@ -67,7 +71,14 @@
        margin-top: 20px;
        margin-bottom: 20px;
     }
-    
+    .tittle{
+       
+      font-size: 18px;
+      color: #F3B00F;
+      align-self: center;
+      margin-bottom: 20px;
+
+    }
     .anunciado span:nth-child(1){
         font-size: 20px;
        font-weight: bold;

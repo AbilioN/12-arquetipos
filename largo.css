@@ -42,7 +42,7 @@
     }
     
     .imagem{
-        height: 550px;
+        height: 100%;
     }
     .imagem >img {
        display: block;
@@ -51,15 +51,25 @@
     }
     
     .anunciado{
+
        display: flex;
        flex-direction: column;
        justify-content: center;
        align-items: center;
-       height: 220px;
-       padding: 20px 50px 20px 50px;
+       height: 100%;
+       font-size: 15px;
+       color: #1F2326;
+       margin: 10%;
        text-align: center;
     }
-    
+    .tittle{
+      
+      font-size: 18px;
+      color: #F3B00F;
+      align-self: center;
+      margin-bottom: 20px;
+
+    }
     .anunciado > img{
        display: block;
        width: 20px;
