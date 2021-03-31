@@ -42,7 +42,12 @@
     }
     
     .imagem{
+        max-height: 700px;
+        max-width: 700px;
         height: 400px;
+
+         width:100%;
+         align-self: center;
     }
     .imagem >img {
        display: block;
@@ -50,6 +55,10 @@
        height: 100%;
     }
     
+    .titulo {
+      font-size: 3.2em;
+      color: #F3B00F;
+   }
     .anunciado{
        display: flex;
        flex-direction: column;
@@ -98,7 +107,7 @@
        align-items: center;
        flex-direction: column;
        padding: 25px 45px 25px 45px;
-       height: 200px;
+       height: 300px;
        background-color: #F2EEED;
        margin-bottom: 100px;
     }
