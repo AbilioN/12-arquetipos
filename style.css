@@ -43,9 +43,24 @@ h4{
 }
 
 .imagem{
-    height: 300px;
-    border-bottom: 1px solid #707070;
+   max-height: 700px;
+   max-width: 700px;
+    height: auto;
+    width:100%;
+    /* border: 2px solid red; */
+    align-self: center;
 }
+
+.optiondiv {
+   margin: auto;
+   margin-top: 30px;
+   width:60vw;
+}
+.optiondiv label {
+   font-size: 22px;
+}
+
+
 .titulo {
    font-size: 3em;
    color: #F3B00F;

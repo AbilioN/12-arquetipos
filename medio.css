@@ -47,7 +47,8 @@
         height: 480px;
 
          width:100%;
-         align-self: center;
+        margin: auto;
+
     }
 
     .titulo {

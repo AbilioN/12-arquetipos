@@ -417,11 +417,19 @@ $(document).ready(function () {
             item.classList.add('invisible')
         })
         
-        if(lastStep == json.length){
-            setMessager()
-            initContactForm()
-            return
+        // Se necessario criar formulario de nome e email descomente este codigo abaixo.
+        // if(lastStep == json.length){
+        //     setMessager()
+        //     initContactForm()
+        //     return
+        // }
+
+        // Caso queira a versao sem formulario descomente este codigo abaixo
+        if(lastStep == json.length)
+        {
+            initFormSubmit();
         }
+
 
        let finalStep =  addCards(lastStep, size)
         updateCounter(finalStep);
@@ -525,12 +533,8 @@ $(document).ready(function () {
         naoterapeutaInputDiv.appendChild(naoTerapeutaLabel)
 
         
-
-
-
         divTerapeuta.appendChild(terapeutaInputDiv)
         divTerapeuta.appendChild(naoterapeutaInputDiv)
-
 
 
         divContact.appendChild(nameInput)
@@ -549,15 +553,38 @@ $(document).ready(function () {
 
     }
 
+
+    function initFormSubmit()
+    {
+        let botaoSetaSeguir = document.getElementById('seta_seguir')
+        botaoSetaSeguir.remove()
+        let counter = document.getElementById('counter')
+        counter.remove();
+        let form = document.getElementById('form')
+        let button = document.createElement('button')
+
+        let divBotao = document.createElement('div')
+        
+
+        button.setAttribute('style' , 'margin: 30px auto;');
+
+        divBotao.setAttribute('style' , 'display:flex;');
+
+
+
+        button.setAttribute('type' , 'submit')
+        button.setAttribute('style' , 'margin:auto; margin-bottom:50px;' );
+        button.classList.add('button-submit')
+        button.innerText = 'Enviar'
+
+        divBotao.append(button)
+        form.append(divBotao)
+
+    }
+
     function setDisplayMessengers(){
         $('.display-option').on('click' , function(){
 
-            // this.displayMessage = '';
-            // this.className = '';
-    
-            console.log(this.value);
-            console.log(this.name);
-    
     
             if(this.value == 1)
             {
