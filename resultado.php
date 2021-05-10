@@ -1,4 +1,6 @@
 <?php
+    ob_start();
+
     require_once('lib/JSONDB.php');
     require_once('lib/PHPMailer.php');
     require_once('lib/Exception.php');
@@ -622,8 +624,26 @@
             'orfao' => 'O Órfão',
             'sabio' => 'O Sábio',
         ];
+
+        $arrayKeys = [ 'inocente' , 'orfao' , 'guerreiro' , 'caridoso' , 'explorador' , 'destruidor' , 'amante' , 'criador' , 'governante', 'mago' , 'sabio', 'bobo'];
+        // var_dump($arrayKeys);
+        // die;
+        return [$arrayTextos[$arquetipo], $arrayVideos[$arquetipo] , $arrayTitulos[$arquetipo] , $arrayKeys];
+    }
+
+    function getKeyFromArrayKeys($arquetipo, $arrayKeys)
+    {
      
-        return [$arrayTextos[$arquetipo], $arrayVideos[$arquetipo] , $arrayTitulos[$arquetipo]];
+        foreach($arrayKeys as $key => $value)
+        {
+       
+            if($value == $arquetipo){
+                
+                return $key + 1;
+
+            }
+        }
+
     }
 
     // $pagina_resultados = file_get_contents('./resultado.shtml');
@@ -649,26 +669,60 @@
         }
         $paginaFinal = str_replace('%ARQUETIPO%', $arquetipos[0], $paginaFinal);
         
-        list($textoArquetipo, $videoLink , $tituloArquetipo) = arquetipoTexto($arquetipos[0]);
+        list($textoArquetipo, $videoLink , $tituloArquetipo , $arrayKeys) = arquetipoTexto($arquetipos[0]);
 
-        
-        $paginaFinal = str_replace('%TEXTO%', $textoArquetipo, $paginaFinal);
-        $paginaFinal = str_replace('%VIDEOLINK%', $videoLink, $paginaFinal);
-        $paginaFinal = str_replace('%TITULOARQUETIPO%', $tituloArquetipo, $paginaFinal);
+        // $version = 'estudante';
 
+        $version = 'online';
 
-
-
+    
         $db = new JSONDB('database');
         
-        $db->insert('dados.json',
+
+
+        if($version == 'estudante')
+        {
+            $paginaFinal = file_get_contents('./paginafinal.phtml');
+            $paginaFinal = str_replace('%TEXTO%', $textoArquetipo, $paginaFinal);
+            $paginaFinal = str_replace('%VIDEOLINK%', $videoLink, $paginaFinal);
+            $paginaFinal = str_replace('%TITULOARQUETIPO%', $tituloArquetipo, $paginaFinal);
+
+        }else if($version == 'online'){
+
+
+            $db->insert('dados.json',
             [
                 'nome' => $nome,
                 'email' => $email,
                 'proximo' => $arquetipos[0],
                 'terapeuta' => $terapeuta
             ]
-        );
+            );
+
+
+
+            $key = getKeyFromArrayKeys($arquetipos[0] , $arrayKeys);
+
+            if($key < 10){
+                $key = '0'.strval($key);
+            }else{
+                $key = strval($key);
+            }
+
+            // $location = $_SERVER["SERVER_NAME"] . '/' . $key;
+            $location =  '/' . $key;
+
+            header("Location:" . $location.'.phtml');
+            // $paginaFinal = file_get_contents('./paginaFinalOnline.phtml');
+
+            // echo $paginaFinal;
+        }
+
+
+
+
+
+
         
         
         echo($paginaFinal);

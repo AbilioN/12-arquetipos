@@ -332,13 +332,14 @@ $(document).ready(function () {
             // select.children[0].setAttribute("onclick" , "displayMessage("+i+")");
 
 
-            if(i == 2){
-                select.children[0].setAttribute("checked", 'checked')
+            // para deixar selecionado por neutro como default, descomente este codigo.
+            // if(i == 2){
+            //     select.children[0].setAttribute("checked", 'checked')
 
-                messageDiv.classList.add('neutro')
-                messageDiv.innerText = 'Neutro'
+            //     messageDiv.classList.add('neutro')
+            //     messageDiv.innerText = 'Neutro'
 
-            }
+            // }
 
             let selectorString = question.ID + '-' + i + 1
             select.children[0].setAttribute("name", question.ID)
@@ -434,6 +435,8 @@ $(document).ready(function () {
        let finalStep =  addCards(lastStep, size)
         updateCounter(finalStep);
     }
+
+    
     $('#seta_seguir').click(() => {
         loadCards()
         setDisplayMessengers()
@@ -582,10 +585,10 @@ $(document).ready(function () {
 
     }
 
+
     function setDisplayMessengers(){
         $('.display-option').on('click' , function(){
 
-    
             if(this.value == 1)
             {
                 displayMessage = 'Discordo totalmente'
