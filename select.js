@@ -292,7 +292,6 @@ let json = [
 $(document).ready(function () {
     let container_all_questions = document.getElementById("container_cards")
 
-
     function criarPergunta(question) {
         let pergunta_container = document.createElement("div")
         pergunta_container.className = 'pergunta_opcoes'
@@ -309,7 +308,7 @@ $(document).ready(function () {
 
         let messageDiv = document.createElement("div")
         messageDiv.className = 'mensagem-div'
-        messageDiv.id = 'mensagem-div-'+question.ID;
+        messageDiv.id = 'mensagem-div-' + question.ID;
 
 
         pergunta_container.appendChild(div)
@@ -319,8 +318,8 @@ $(document).ready(function () {
 
         for (let i = 0; i <= 5; i++) {
 
-
             let select = document.createElement("label")
+            select.addEventListener("click", checkNextButton)
             select.className = 'custom-radio-btn'
             select.appendChild(document.createElement("input"))
             select.children[0].setAttribute("name", "opcoes")
@@ -351,12 +350,11 @@ $(document).ready(function () {
             select.children[1].setAttribute('for', selectorString)
 
             pergunta_container.children[1].appendChild(select)
-            setDisplayMessengers()
         }
-
+        setDisplayMessengers()
     }
 
-    
+
     function seguir_voltar() {
         for (let i = 2; i < container_all_questions.length; i++) {
             container_all_questions.children[i].remove
@@ -405,7 +403,7 @@ $(document).ready(function () {
         return lastStep;
     }
 
-    let lastStep =  addCards(step, size);
+    let lastStep = addCards(step, size);
     updateCounter(lastStep);
 
 
@@ -417,7 +415,7 @@ $(document).ready(function () {
         cards.forEach((item) => {
             item.classList.add('invisible')
         })
-        
+
         // Se necessario criar formulario de nome e email descomente este codigo abaixo.
         // if(lastStep == json.length){
         //     setMessager()
@@ -426,41 +424,39 @@ $(document).ready(function () {
         // }
 
         // Caso queira a versao sem formulario descomente este codigo abaixo
-        if(lastStep == json.length)
-        {
+        if (lastStep == json.length) {
             initFormSubmit();
         }
 
 
-       let finalStep =  addCards(lastStep, size)
+        let finalStep = addCards(lastStep, size)
         updateCounter(finalStep);
     }
 
-    
+
     $('#seta_seguir').click(() => {
         loadCards()
         setDisplayMessengers()
-
+        let seguir = document.getElementById('seta_seguir')
+        seguir.style.display = 'none'
     })
 
 
-    function updateCounter(step)
-    {
+    function updateCounter(step) {
         let counter = document.getElementById('counter')
 
-        let painel = ''+step+'/'+json.length
+        let painel = '' + step + '/' + json.length
         counter.innerText = painel
     }
 
-    function setMessager()
-    {
+    function setMessager() {
         let message = 'Obrigado por responder nosso formulario, deixe-nos saber seu nome e e-mail'
         let messager = document.getElementById('messenger')
         messager.innerText = message
     }
 
-    
-    function initContactForm(){
+
+    function initContactForm() {
 
         let botaoSetaSeguir = document.getElementById('seta_seguir')
         botaoSetaSeguir.remove()
@@ -469,8 +465,8 @@ $(document).ready(function () {
         let button = document.createElement('button')
 
 
-        button.setAttribute('type' , 'submit')
-        button.setAttribute('style' , 'margin-bottom:40px');
+        button.setAttribute('type', 'submit')
+        button.setAttribute('style', 'margin-bottom:40px');
         button.classList.add('button-submit')
         button.innerText = 'Enviar'
 
@@ -480,17 +476,17 @@ $(document).ready(function () {
         divContact.classList.add('contact-form')
 
 
-    
-        let nameInput = document.createElement('input')
-        nameInput.setAttribute('type' , 'text')
-        nameInput.setAttribute('placeholder' , 'Nome')
-        nameInput.setAttribute('name' , 'nome')
 
-           
+        let nameInput = document.createElement('input')
+        nameInput.setAttribute('type', 'text')
+        nameInput.setAttribute('placeholder', 'Nome')
+        nameInput.setAttribute('name', 'nome')
+
+
         let emailInput = document.createElement('input')
-        emailInput.setAttribute('type' , 'text')
-        emailInput.setAttribute('name' , 'email')
-        emailInput.setAttribute('placeholder' , 'Email')
+        emailInput.setAttribute('type', 'text')
+        emailInput.setAttribute('name', 'email')
+        emailInput.setAttribute('placeholder', 'Email')
 
 
 
@@ -504,19 +500,19 @@ $(document).ready(function () {
 
         let terapeutaInput = document.createElement('input')
 
-        terapeutaInput.setAttribute('type' , 'radio')
-        terapeutaInput.setAttribute('name' , 'terapeut')
-        terapeutaInput.setAttribute('value' , true)
+        terapeutaInput.setAttribute('type', 'radio')
+        terapeutaInput.setAttribute('name', 'terapeut')
+        terapeutaInput.setAttribute('value', true)
 
         let tereutaLabel = document.createElement('label')
         tereutaLabel.innerText = 'Sou Psicólogo / Já sou Terapueta / Em formação para ser Terapeuta'
 
-        
+
         let naoTerapeutaInput = document.createElement('input')
 
-        naoTerapeutaInput.setAttribute('type' , 'radio')
-        naoTerapeutaInput.setAttribute('name' , 'terapeut')
-        naoTerapeutaInput.setAttribute('value' , false)
+        naoTerapeutaInput.setAttribute('type', 'radio')
+        naoTerapeutaInput.setAttribute('name', 'terapeut')
+        naoTerapeutaInput.setAttribute('value', false)
 
         let naoTerapeutaLabel = document.createElement('label')
         naoTerapeutaLabel.innerText = 'Não sou terapeuta'
@@ -535,7 +531,7 @@ $(document).ready(function () {
         naoterapeutaInputDiv.appendChild(naoTerapeutaInput)
         naoterapeutaInputDiv.appendChild(naoTerapeutaLabel)
 
-        
+
         divTerapeuta.appendChild(terapeutaInputDiv)
         divTerapeuta.appendChild(naoterapeutaInputDiv)
 
@@ -557,8 +553,7 @@ $(document).ready(function () {
     }
 
 
-    function initFormSubmit()
-    {
+    function initFormSubmit() {
         let botaoSetaSeguir = document.getElementById('seta_seguir')
         botaoSetaSeguir.remove()
         let counter = document.getElementById('counter')
@@ -567,16 +562,16 @@ $(document).ready(function () {
         let button = document.createElement('button')
 
         let divBotao = document.createElement('div')
-        
-
-        button.setAttribute('style' , 'margin: 30px auto;');
-
-        divBotao.setAttribute('style' , 'display:flex;');
 
 
+        button.setAttribute('style', 'margin: 30px auto;');
 
-        button.setAttribute('type' , 'submit')
-        button.setAttribute('style' , 'margin:auto; margin-bottom:50px;' );
+        divBotao.setAttribute('style', 'display:flex;');
+
+
+
+        button.setAttribute('type', 'submit')
+        button.setAttribute('style', 'margin:auto; margin-bottom:50px;');
         button.classList.add('button-submit')
         button.innerText = 'Enviar'
 
@@ -586,54 +581,77 @@ $(document).ready(function () {
     }
 
 
-    function setDisplayMessengers(){
-        $('.display-option').on('click' , function(){
+    function setDisplayMessengers() {
 
-            if(this.value == 1)
-            {
+        $('.display-option').on('click', function () {
+
+            if (this.value == 1) {
                 displayMessage = 'Discordo totalmente'
                 className = 'negativo'
             }
-    
-            if(this.value == 2)
-            {
-    
+
+            if (this.value == 2) {
+
                 displayMessage = 'Discordo parcialmente'
                 className = 'negativo'
             }
-            if(this.value == 3)
-            {
-    
+            if (this.value == 3) {
+
                 displayMessage = 'Neutro'
                 className = 'neutro'
             }
-            if(this.value == 4)
-            {
-    
+            if (this.value == 4) {
+
                 displayMessage = 'Concordo parcialmente'
                 className = 'positivo'
             }
-            if(this.value == 5)
-            {
+            if (this.value == 5) {
                 displayMessage = 'Concordo totalmente'
                 className = 'positivo'
             }
-    
-            let divmessage = $('#mensagem-div-'+this.name);
-         
-    
+
+            if (!this.value) {
+                displayMessage = 'Te mato'
+            }
+
+            let divmessage = $('#mensagem-div-' + this.name);
+
+
             divmessage.removeClass('positivo');
             divmessage.removeClass('neutro');
             divmessage.removeClass('negativo');
-    
-    
+
+
             divmessage.addClass(className);
             divmessage.text('');
             divmessage.html(displayMessage);
-    
-    
+
+
         })
     }
 
-    
+    function checkNextButton() {
+        let container_cards = document.querySelectorAll('#container_cards')
+        let contador = 0
+
+        for (let i = 0; i < container_cards[0].childElementCount; i++) {
+            let div = container_cards[0].childNodes[i + 1]
+            for (let s = 0; s < 5; s++) {
+                let label = div.childNodes[1].childNodes[s].childNodes[1]
+                if (getComputedStyle(label).opacity == 1) {
+                    contador++
+                }
+            }
+        }
+
+        if (contador === container_cards[0].childElementCount) {
+            console.log('opa')
+            let seguir = document.getElementById('seta_seguir')
+            seguir.style.display = 'flex'
+        }
+
+    }
+
+
 })
+
